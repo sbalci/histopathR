@@ -9,6 +9,7 @@ author:
     affiliation_url: https://sbalci.github.io/
 date: "`r Sys.Date()`"
 output: 
+  redoc::redoc:
   pdf_document: 
     fig_caption: yes
     highlight: kate

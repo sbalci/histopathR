@@ -1,0 +1,42 @@
+---
+title: "R packages"
+output: html_notebook
+---
+
+- R packages  
+http://r-pkgs.had.co.nz/intro.html  
+https://r-pkgs.org  
+
+
+
+```{r}
+library(devtools)
+library(tidyverse)
+library(fs)
+
+
+```
+
+```{r}
+fnumeric <- function(x) {
+  as.numeric(as.character(x))
+}
+
+use_r("fnumeric")
+
+
+```
+
+```{r}
+devtools::load_all()
+```
+
+
+
+
+
+
+
+
+
+
