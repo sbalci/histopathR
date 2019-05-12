@@ -1,0 +1,75 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+---
+
+# Save Final Data  {.appendix}  
+
+saved data after analysis to `gallbladderFC.xlsx`.
+
+```{r save final data}
+saveRDS(gallbladderFC, "gallbladderFC.rds")
+
+writexl::write_xlsx(gallbladderFC, "gallbladderFC.xlsx")
+
+file.info("gallbladderFC.xlsx")$ctime
+
+```
+
+
+
+\pagebreak
+
+
+# Libraries Used {.appendix}  
+
+```{r citation}
+citation()
+```
+
+
+```{r library citations}
+citation("tidyverse")
+citation("readxl")
+citation("janitor")
+citation("report")
+citation("finalfit")
+# citation("ggstatplot")
+```
+
+
+```{r library citation as report, results='asis'}
+report::cite_packages(session = sessionInfo())
+```
+
+
+
+The jamovi project (2019). jamovi. (Version 0.9) [Computer Software]. Retrieved from https://www.jamovi.org.
+R Core Team (2018). R: A Language and envionment for statistical computing. [Computer software]. Retrieved from https://cran.r-project.org/.
+Fox, J., & Weisberg, S. (2018). car: Companion to Applied Regression. [R package]. Retrieved from https://cran.r-project.org/package=car.
+
+
+
+
+
+```{r session info}
+sessionInfo()
+```
+
+
+
+\pagebreak
+
+
+
+# Notes {.appendix}  
+
+Last update on `r Sys.time()`  
+
+Serdar Balci, MD, Pathologist  
+drserdarbalci@gmail.com  
+https://rpubs.com/sbalci/CV   
+
