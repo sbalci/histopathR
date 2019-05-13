@@ -5,3 +5,4 @@
 ^pkgdown$
 exampleR
 exampleRmd
+^LICENSE\.md$

@@ -32,10 +32,49 @@ devtools::load_all()
 ```
 
 
+```{r}
+devtools::check()
+```
+
+```{r}
+pkgdown::build_site()
+```
+
+```{r}
+usethis::use_mit_license("Serdar Balci")
+
+```
+
+```{r}
+devtools::document()
+```
 
 
 
 
+```{r}
+devtools::check()
+
+```
+
+```{r}
+devtools::install()
+```
+
+
+
+```{r}
+usethis::use_testthat()
+```
+
+```{r}
+devtools::test()
+```
+
+
+```{r}
+usethis::use_package("forcats")
+```
 
 
 
