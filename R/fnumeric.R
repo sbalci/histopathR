@@ -1,6 +1,6 @@
 #' Make numeric data from factor
 #'
-#' @param x 
+#' @param x factor
 #'
 #' @return numeric
 #' @export

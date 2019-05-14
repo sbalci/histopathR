@@ -7,7 +7,7 @@
 fnumeric(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{factor}
 }
 \value{
 numeric
