@@ -6,3 +6,4 @@
 exampleR
 exampleRmd
 ^LICENSE\.md$
+.travis.yml
