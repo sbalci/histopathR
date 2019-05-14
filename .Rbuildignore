@@ -7,3 +7,4 @@ exampleR
 exampleRmd
 ^LICENSE\.md$
 .travis.yml
+appveyor.yml
