@@ -27,3 +27,5 @@ rsconnect/
 .Rprofile
 .Rbuildignore
 .gitignore
+exampleRmd
+exampleR

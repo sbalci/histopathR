@@ -8,3 +8,4 @@ exampleRmd
 ^LICENSE\.md$
 .travis.yml
 appveyor.yml
+histopathR.Rproj
