@@ -1,6 +1,8 @@
 # histopathR
 
 [![Build Status](https://travis-ci.com/sbalci/histopathR.svg?branch=master)](https://travis-ci.com/sbalci/histopathR)  
+[![codecov](https://codecov.io/gh/sbalci/histopathR/branch/master/graph/badge.svg)](https://codecov.io/gh/sbalci/histopathR)  
+
 
 https://sbalci.github.io/histopathR/
 
