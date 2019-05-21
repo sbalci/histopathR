@@ -9,3 +9,5 @@ exampleRmd
 .travis.yml
 appveyor.yml
 histopathR.Rproj
+exampleRCodes
+exampleRmdFiles

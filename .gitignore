@@ -29,3 +29,5 @@ rsconnect/
 .gitignore
 exampleRmd
 exampleR
+exampleRCodes
+exampleRmdFiles
