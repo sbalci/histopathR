@@ -79,3 +79,18 @@ usethis::use_package("forcats")
 
 
 
+# template
+
+Creating a basic template package in R
+
+http://ismayc.github.io/ecots2k16/template_pkg/
+
+```{r}
+dir.create("~/histopathR/inst/rmarkdown/templates/report/skeleton",
+    recursive = TRUE)
+
+```
+
+
+
+

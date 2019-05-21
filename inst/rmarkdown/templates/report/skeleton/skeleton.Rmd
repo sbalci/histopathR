@@ -1,6 +1,8 @@
 ---
 title: "Histopathology Research Template"
-output: html_notebook
+author: "Serdar Balci"
+date:  "`r Sys.Date()`"
+output: html_document
 ---
 
 

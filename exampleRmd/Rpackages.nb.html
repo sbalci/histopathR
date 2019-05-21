@@ -1931,9 +1931,25 @@ Writing fnumeric.Rd</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<div id="template" class="section level1">
+<h1>template</h1>
+<p>Creating a basic template package in R</p>
+<p><a href="http://ismayc.github.io/ecots2k16/template_pkg/" class="uri">http://ismayc.github.io/ecots2k16/template_pkg/</a></p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlyLmNyZWF0ZShcIi9pbnN0L3JtYXJrZG93bi90ZW1wbGF0ZXMvcmVwb3J0L3NrZWxldG9uXCIsXG4gICAgcmVjdXJzaXZlID0gVFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>dir.create(&quot;/inst/rmarkdown/templates/report/skeleton&quot;,
+    recursive = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiY2Fubm90IGNyZWF0ZSBkaXIgJy9pbnN0JywgcmVhc29uICdQZXJtaXNzaW9uIGRlbmllZCdcbiJ9 -->
+<pre><code>cannot create dir '/inst', reason 'Permission denied'</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBwYWNrYWdlcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKLSBSIHBhY2thZ2VzICAKaHR0cDovL3ItcGtncy5oYWQuY28ubnovaW50cm8uaHRtbCAgCmh0dHBzOi8vci1wa2dzLm9yZyAgCgoKCmBgYHtyfQpsaWJyYXJ5KGRldnRvb2xzKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShmcykKCgpgYGAKCmBgYHtyfQpmbnVtZXJpYyA8LSBmdW5jdGlvbih4KSB7CiAgYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoeCkpCn0KCnVzZV9yKCJmbnVtZXJpYyIpCgoKYGBgCgpgYGB7cn0KZGV2dG9vbHM6OmxvYWRfYWxsKCkKYGBgCgoKYGBge3J9CmRldnRvb2xzOjpjaGVjaygpCmBgYAoKYGBge3J9CnBrZ2Rvd246OmJ1aWxkX3NpdGUoKQpgYGAKCmBgYHtyfQp1c2V0aGlzOjp1c2VfbWl0X2xpY2Vuc2UoIlNlcmRhciBCYWxjaSIpCgpgYGAKCmBgYHtyfQpkZXZ0b29sczo6ZG9jdW1lbnQoKQpgYGAKCgoKCmBgYHtyfQpkZXZ0b29sczo6Y2hlY2soKQoKYGBgCgpgYGB7cn0KZGV2dG9vbHM6Omluc3RhbGwoKQpgYGAKCgoKYGBge3J9CnVzZXRoaXM6OnVzZV90ZXN0dGhhdCgpCmBgYAoKYGBge3J9CmRldnRvb2xzOjp0ZXN0KCkKYGBgCgoKYGBge3J9CnVzZXRoaXM6OnVzZV9wYWNrYWdlKCJmb3JjYXRzIikKYGBgCgoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBwYWNrYWdlcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKLSBSIHBhY2thZ2VzICAKaHR0cDovL3ItcGtncy5oYWQuY28ubnovaW50cm8uaHRtbCAgCmh0dHBzOi8vci1wa2dzLm9yZyAgCgoKCmBgYHtyfQpsaWJyYXJ5KGRldnRvb2xzKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShmcykKCgpgYGAKCmBgYHtyfQpmbnVtZXJpYyA8LSBmdW5jdGlvbih4KSB7CiAgYXMubnVtZXJpYyhhcy5jaGFyYWN0ZXIoeCkpCn0KCnVzZV9yKCJmbnVtZXJpYyIpCgoKYGBgCgpgYGB7cn0KZGV2dG9vbHM6OmxvYWRfYWxsKCkKYGBgCgoKYGBge3J9CmRldnRvb2xzOjpjaGVjaygpCmBgYAoKYGBge3J9CnBrZ2Rvd246OmJ1aWxkX3NpdGUoKQpgYGAKCmBgYHtyfQp1c2V0aGlzOjp1c2VfbWl0X2xpY2Vuc2UoIlNlcmRhciBCYWxjaSIpCgpgYGAKCmBgYHtyfQpkZXZ0b29sczo6ZG9jdW1lbnQoKQpgYGAKCgoKCmBgYHtyfQpkZXZ0b29sczo6Y2hlY2soKQoKYGBgCgpgYGB7cn0KZGV2dG9vbHM6Omluc3RhbGwoKQpgYGAKCgoKYGBge3J9CnVzZXRoaXM6OnVzZV90ZXN0dGhhdCgpCmBgYAoKYGBge3J9CmRldnRvb2xzOjp0ZXN0KCkKYGBgCgoKYGBge3J9CnVzZXRoaXM6OnVzZV9wYWNrYWdlKCJmb3JjYXRzIikKYGBgCgoKCgojIHRlbXBsYXRlCgpDcmVhdGluZyBhIGJhc2ljIHRlbXBsYXRlIHBhY2thZ2UgaW4gUgoKaHR0cDovL2lzbWF5Yy5naXRodWIuaW8vZWNvdHMyazE2L3RlbXBsYXRlX3BrZy8KCmBgYHtyfQpkaXIuY3JlYXRlKCJ+L2hpc3RvcGF0aFIvaW5zdC9ybWFya2Rvd24vdGVtcGxhdGVzL3JlcG9ydC9za2VsZXRvbiIsCiAgICByZWN1cnNpdmUgPSBUUlVFKQoKYGBgCgoKCgo=</div>
 
 
 

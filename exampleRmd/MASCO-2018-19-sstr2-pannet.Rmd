@@ -178,6 +178,7 @@ masco_pannet %>%
 ```
 
 
+
 ```{r}
 ## Recoding masco_pannet$tek_multipl into masco_pannet$LezyonSayisi
 masco_pannet$LezyonSayisi <- recode(masco_pannet$tek_multipl,
