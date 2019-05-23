@@ -1,11 +1,47 @@
 ---
 title: "Histopathology Research Template"
+description: |
+  Histopathology Research Template.
+author:
+  - name: Serdar Balci 
+    url: https://sbalci.github.io
+    affiliation: MD Pathologist
+    affiliation_url: https://www.serdarbalci.com
+
 author: "Serdar Balci"
 date:  "`r Sys.Date()`"
-output: html_document
+output: 
+  html_document:
+  pdf_document: 
+    fig_caption: yes
+    highlight: kate
+    number_sections: yes
+    toc: yes
+    latex_engine: lualatex
+    toc_depth: 5
+  redoc::redoc:
+    highlight_outputs: TRUE
+    margins: 1 
+    line_numbers: FALSE 
+  distill::distill_article:
+    toc: true
 ---
 
 
+date: "`r Sys.Date()`"
+output: 
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+
+```{r load library}
+source("R/loadLibrary.R")
+```
 
 
 
@@ -21,6 +57,39 @@ output: html_document
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+```{r footer,  child='_footer.Rmd'}
+```
 
 
 
