@@ -1,4 +1,4 @@
-Welcome to the histopathR wiki!
+Welcome to the histopathR package.
 
 I have been collecting R Codes in another repository: [My R Codes For Data Analysis](https://github.com/sbalci/MyRCodesForDataAnalysis).
 
