@@ -2,3 +2,4 @@
 
 export(describeContinious)
 export(fnumeric)
+export(generateDescriptiveCode)

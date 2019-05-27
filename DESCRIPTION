@@ -24,6 +24,21 @@ RoxygenNote: 6.1.1
 URL: https://sbalci.github.io/histopathR/ https://github.com/sbalci/histopathR
 BugReports: https://github.com/sbalci/histopathR/issues
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    covr
 Imports: 
-    forcats
+    forcats,
+    readxl,
+    janitor,
+    report,
+    finalfit,
+    ggstatsplot,
+    jmv,
+    lubridate,
+    summarytools,
+    survival,
+    psycho,
+    kableExtra,
+    knitr,
+    magicfor,
+    dplyr

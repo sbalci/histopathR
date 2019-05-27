@@ -25,7 +25,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -73,34 +73,40 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
+    
+
+    
+    
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="histopathr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#histopathr" class="anchor"></a>histopathR</h1></div>
-
-<p><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a></p>
-<p><a href="https://www.tidyverse.org/lifecycle/"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></p>
-<p><a href="https://travis-ci.com/sbalci/histopathR"><img src="https://travis-ci.com/sbalci/histopathR.svg?branch=master" alt="Travis Build Status"></a><br><a href="https://codecov.io/gh/sbalci/histopathR"><img src="https://codecov.io/gh/sbalci/histopathR/branch/master/graph/badge.svg" alt="codecov"></a><br><a href="https://ci.appveyor.com/project/sbalci/histopathr"><img src="https://ci.appveyor.com/api/projects/status/1cxwgpgfi1x9vcdc?svg=true" alt="Appveyor Build status"></a><br><a href="https://coveralls.io/github/sbalci/histopathR?branch=master"><img src="https://coveralls.io/repos/github/sbalci/histopathR/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://requires.io/github/sbalci/histopathR/requirements/?branch=master"><img src="https://requires.io/github/sbalci/histopathR/requirements.svg?branch=master" alt="Requirements Status"></a></p>
-<p><a href="https://libraries.io/github/sbalci/histopathR"><img src="https://img.shields.io/librariesio/github/sbalci/histopathR.svg" alt="Libraries.io dependency status for GitHub repo"></a> <a href="https://github.com/sbalci/histopathR/commits/master"><img src="https://img.shields.io/github/last-commit/sbalci/histopathR.svg" alt="GitHub last commit"></a> <a href="https://CRAN.R-project.org/package=histopathR"><img src="https://cranlogs.r-pkg.org/badges/last-day/histopathR?color=blue" alt="Daily downloads badge"></a> <a href="https://github.com/sbalci/histopathR/"><img src="https://img.shields.io/badge/GitHub-0.0.0.9000-orange.svg?style=flat-square" alt="GitHub version"></a> <a href="https://github.com/sbalci/histopathR/issues"><img src="https://img.shields.io/github/issues/sbalci/histopathR.svg" alt="GitHub issues"></a> <a href="https://github.com/sbalci/histopathR"><img src="https://img.shields.io/github/languages/code-size/sbalci/histopathR.svg" alt="GitHub code size in bytes"></a> <a href="https://github.com/sbalci/histopathR/network"><img src="https://img.shields.io/github/forks/sbalci/histopathR.svg" alt="GitHub forks"></a> <a href="https://github.com/sbalci/histopathR/stargazers"><img src="https://img.shields.io/github/stars/sbalci/histopathR.svg" alt="GitHub stars"></a> <a href="https://sbalci.github.io/histopathR/"><img src="https://img.shields.io/badge/website-histopathR-orange.svg?colorB=E91E63" alt="Website"></a> <a href="http://hits.dwyl.io/sbalci/histopathR"><img src="http://hits.dwyl.io/sbalci/histopathR.svg" alt="HitCount"></a></p>
-<p><a href="https://twitter.com/intent/tweet?text=%23rstats%20codes%20for%20histopathology%20research%20by%20@serdarbalci&amp;url=https%3A%2F%2Fgithub.com%2Fsbalci%2FhistopathR"><img src="https://img.shields.io/twitter/url/https/github.com/sbalci/histopathR.svg?style=social" alt="Twitter"></a> <img src="https://img.shields.io/github/license/sbalci/histopathR.svg" alt="GitHub"><a href="https://github.com/sbalci/histopathR/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions welcome"></a> <a href="https://saythanks.io/to/sbalci"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"></a></p>
+<!-- badges: start -->
+<p><a href="https://CRAN.R-project.org/package=histopathR"><img src="http://www.r-pkg.org/badges/version-ago/histopathR" alt="CRAN_Release_Badge"></a> <a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a> <a href="https://www.tidyverse.org/lifecycle/"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a> <a href="https://travis-ci.com/sbalci/histopathR"><img src="https://travis-ci.com/sbalci/histopathR.svg?branch=master" alt="Travis Build Status"></a><br><a href="https://codecov.io/gh/sbalci/histopathR"><img src="https://codecov.io/gh/sbalci/histopathR/branch/master/graph/badge.svg" alt="codecov"></a><br><a href="https://ci.appveyor.com/project/sbalci/histopathr"><img src="https://ci.appveyor.com/api/projects/status/1cxwgpgfi1x9vcdc?svg=true" alt="Appveyor Build status"></a><br><a href="https://coveralls.io/github/sbalci/histopathR?branch=master"><img src="https://coveralls.io/repos/github/sbalci/histopathR/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://requires.io/github/sbalci/histopathR/requirements/?branch=master"><img src="https://requires.io/github/sbalci/histopathR/requirements.svg?branch=master" alt="Requirements Status"></a> <a href="https://libraries.io/github/sbalci/histopathR"><img src="https://img.shields.io/librariesio/github/sbalci/histopathR.svg" alt="Libraries.io dependency status for GitHub repo"></a> <a href="https://github.com/sbalci/histopathR/commits/master"><img src="https://img.shields.io/github/last-commit/sbalci/histopathR.svg" alt="GitHub last commit"></a> <a href="https://CRAN.R-project.org/package=histopathR"><img src="https://cranlogs.r-pkg.org/badges/last-day/histopathR?color=blue" alt="Daily downloads badge"></a> <a href="https://github.com/sbalci/histopathR/"><img src="https://img.shields.io/badge/GitHub-0.0.0.9000-orange.svg?style=flat-square" alt="GitHub version"></a> <a href="https://github.com/sbalci/histopathR/issues"><img src="https://img.shields.io/github/issues/sbalci/histopathR.svg" alt="GitHub issues"></a> <a href="https://github.com/sbalci/histopathR"><img src="https://img.shields.io/github/languages/code-size/sbalci/histopathR.svg" alt="GitHub code size in bytes"></a> <a href="https://github.com/sbalci/histopathR/network"><img src="https://img.shields.io/github/forks/sbalci/histopathR.svg" alt="GitHub forks"></a> <a href="https://github.com/sbalci/histopathR/stargazers"><img src="https://img.shields.io/github/stars/sbalci/histopathR.svg" alt="GitHub stars"></a> <a href="https://sbalci.github.io/histopathR/"><img src="https://img.shields.io/badge/website-histopathR-orange.svg?colorB=E91E63" alt="Website"></a> <a href="http://hits.dwyl.io/sbalci/histopathR"><img src="http://hits.dwyl.io/sbalci/histopathR.svg" alt="HitCount"></a> <a href="https://twitter.com/intent/tweet?text=%23rstats%20codes%20for%20histopathology%20research%20by%20@serdarbalci&amp;url=https%3A%2F%2Fgithub.com%2Fsbalci%2FhistopathR"><img src="https://img.shields.io/twitter/url/https/github.com/sbalci/histopathR.svg?style=social" alt="Twitter"></a> <img src="https://img.shields.io/github/license/sbalci/histopathR.svg" alt="GitHub"><a href="https://github.com/sbalci/histopathR/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions welcome"></a> <a href="https://saythanks.io/to/sbalci"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"></a> <!-- badges: end --></p>
+<!-- The goal of histopathR is to ... -->
+<!-- ## Installation -->
+<!-- You can install the released version of histopathR from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- ``` r -->
+<!-- install.packages("histopathR") -->
+<!-- ``` -->
+<!-- The development version from [GitHub](https://github.com/) with: -->
+<!-- ``` r -->
+<!-- # install.packages("devtools") -->
+<!-- devtools::install_github("sbalci/histopathR") -->
+<!-- ``` -->
+<!-- ## Example -->
+<!-- This is a basic example which shows you how to solve a common problem: -->
+<!-- ```{r example} -->
+<!-- library(histopathR) -->
+<!-- ## basic example code -->
+<!-- ``` -->
 <p>UNDER CONSTRUCTION 🛠⛔️⚠️</p>
 <p><a href="https://sbalci.github.io/histopathR/" class="uri">https://sbalci.github.io/histopathR/</a></p>
 <hr>
-<p>🔬 <strong>I plan to collect codes for future research. I will add some small functions.</strong></p>
-<ul>
-<li>Methods to import and prepare data for analysis.</li>
-<li>Descriptive statistics.</li>
-<li>Hypothesis tests.</li>
-<li>Survival analysis.</li>
-<li>Regression analysis.</li>
-<li>Cluster analysis.</li>
-</ul>
+<p>🔬 <strong>I plan to collect codes for future research. I will add some small functions.</strong> - Methods to import and prepare data for analysis. - Descriptive statistics. - Hypothesis tests. - Survival analysis. - Regression analysis. - Cluster analysis.</p>
 <p>🔬 <strong>I plan to make template files to form when loading the package.</strong></p>
-<p>🔬 <strong>I plan two tutorial files as vignettes:</strong></p>
-<ul>
-<li>How to prepare data for histopathological research</li>
-<li>How to analyse data for histopathological research</li>
-</ul>
+<p>🔬 <strong>I plan two tutorial files as vignettes:</strong> - How to prepare data for histopathological research - How to analyse data for histopathological research</p>
 <hr>
 </div>
   </div>
@@ -129,14 +135,10 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=histopathR"><img src="http://www.r-pkg.org/badges/version-ago/histopathR" alt="CRAN_Release_Badge"></a></li>
-</ul>
+      </div>
+
 </div>
-</div>
-</div>
+
 
       <footer><div class="copyright">
   <p>Developed by Serdar Balci.</p>

@@ -11,3 +11,5 @@ appveyor.yml
 histopathR.Rproj
 exampleRCodes
 exampleRmdFiles
+^codecov\.yml$
+^README\.Rmd$
