@@ -2,15 +2,41 @@
 % Please edit documentation in R/describeContinious.R
 \name{describeContinious}
 \alias{describeContinious}
-\title{Title}
+\title{Descriptive Statistics For Continious Variables}
 \usage{
 describeContinious(mydata, myvar, ...)
 }
 \arguments{
-\item{mydata}{}
+\item{mydata}{dataframe}
 
-\item{myvar}{}
+\item{myvar}{vector}
+
+\item{...}{...}
+}
+\value{
+list
 }
 \description{
-Title
+Descriptive Statistics For Continious Variables
+}
+\examples{
+
+describeContinious <- function(mydata, myvar, ...) {
+x <- mydata
+y <- c(myvar)
+jmv::descriptives(
+    data = x,
+    vars = y,
+    hist = TRUE,
+    dens = TRUE,
+    box = TRUE,
+    violin = TRUE,
+    dot = TRUE,
+    missing = FALSE,
+    mode = TRUE,
+    sd = TRUE,
+    sw = TRUE)
+}
+
+
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>generating code for descriptive statistics ---- — generateDescriptiveCode • histopathR</title>
+<title>Generating Markdown Document With Descriptive Statistics Code — generateDescriptiveCode • histopathR</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="generating code for descriptive statistics ---- — generateDescriptiveCode" />
+<meta property="og:title" content="Generating Markdown Document With Descriptive Statistics Code — generateDescriptiveCode" />
 
-<meta property="og:description" content="generating code for descriptive statistics ----" />
+<meta property="og:description" content="Generating Markdown Document With Descriptive Statistics Code" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -84,12 +84,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/sbalci/histopathR">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -102,14 +97,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>generating code for descriptive statistics ----</h1>
-    <small class="dont-index">Source: <a href='https://github.com/sbalci/histopathR/blob/master/R/generateDescriptiveCode.R'><code>R/generateDescriptiveCode.R</code></a></small>
+    <h1>Generating Markdown Document With Descriptive Statistics Code</h1>
+    
     <div class="hidden name"><code>generateDescriptiveCode.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>generating code for descriptive statistics ----</p>
+    <p>Generating Markdown Document With Descriptive Statistics Code</p>
     
     </div>
 
@@ -120,21 +115,47 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataframe</th>
-      <td></td>
+      <td><p>dataframe</p></td>
     </tr>
     <tr>
       <th>fileLokalization</th>
-      <td></td>
+      <td><p>character</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>file</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>generateDescriptiveCode</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>dataframe</span>, <span class='no'>fileLokalization</span>) {
+
+<span class='kw pkg'>magicfor</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magicfor/topics/magic_for'>magic_for</a></span>()
+
+<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/length'>length</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>dataframe</span>))) {
+  <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/paste'>paste0</a></span>(<span class='st'>"```{r}
+feopgl %&gt;% 
+  janitor::tabyl("</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>dataframe</span>)[<span class='no'>i</span>], <span class='st'>") %&gt;%
+  adorn_pct_formatting(rounding = 'half up', digits = 1) %&gt;%
+  knitr::kable()
+```"</span>, <span class='st'>"\n"</span>, <span class='st'>"\n"</span>)
+  <span class='kw pkg'>magicfor</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magicfor/topics/put'>put</a></span>(<span class='no'>y</span>)
+}
+
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/writeLines'>writeLines</a></span>(<span class='kw pkg'>magicfor</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magicfor/topics/magic_result_as_vector'>magic_result_as_vector</a></span>(), <span class='no'>fileLokalization</span>)
+<span class='kw pkg'>magicfor</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/magicfor/topics/magic_free'>magic_free</a></span>()
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

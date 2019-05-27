@@ -2,15 +2,57 @@
 % Please edit documentation in R/generateDescriptiveCode.R
 \name{generateDescriptiveCode}
 \alias{generateDescriptiveCode}
-\title{generating code for descriptive statistics ----}
+\title{Generating Markdown Document With Descriptive Statistics Code}
 \usage{
 generateDescriptiveCode(dataframe, fileLokalization)
 }
 \arguments{
-\item{dataframe}{}
+\item{dataframe}{dataframe}
 
-\item{fileLokalization}{}
+\item{fileLokalization}{character}
+}
+\value{
+file
 }
 \description{
-generating code for descriptive statistics ----
+Generating Markdown Document With Descriptive Statistics Code
+}
+\examples{
+generateDescriptiveCode <- function(dataframe, fileLokalization) {
+
+magicfor::magic_for()
+
+for (i in 1:length(names(dataframe))) {
+  y <- paste0("```{r}
+feopgl \%>\% 
+  janitor::tabyl(", names(dataframe)[i], ") \%>\%
+  adorn_pct_formatting(rounding = 'half up', digits = 1) \%>\%
+  knitr::kable()
+```", "\\n", "\\n")
+  magicfor::put(y)
+}
+
+writeLines(magicfor::magic_result_as_vector(), fileLokalization)
+magicfor::magic_free()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
