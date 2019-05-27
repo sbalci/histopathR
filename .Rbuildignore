@@ -13,3 +13,7 @@ exampleRCodes
 exampleRmdFiles
 ^codecov\.yml$
 ^README\.Rmd$
+^exampleRCodes$
+^cran-comments\.md$
+^\.travis\.yml$
+^NEWS\.md$
