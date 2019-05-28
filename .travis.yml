@@ -6,5 +6,9 @@ r_packages:
   - covr
   - devtools
 
+r_github_packages:
+    - rstudio/distill
+    - easystats/report
+
 after_success:
   - Rscript -e 'library(covr); codecov()'
