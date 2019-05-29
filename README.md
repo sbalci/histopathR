@@ -17,14 +17,14 @@ Status](https://travis-ci.com/sbalci/histopathR.svg?branch=master)](https://trav
 status](https://ci.appveyor.com/api/projects/status/1cxwgpgfi1x9vcdc?svg=true)](https://ci.appveyor.com/project/sbalci/histopathr)
 [![Coverage
 Status](https://coveralls.io/repos/github/sbalci/histopathR/badge.svg?branch=master)](https://coveralls.io/github/sbalci/histopathR?branch=master)
+[![CircleCI](https://circleci.com/gh/sbalci/histopathR.svg?style=svg)](https://circleci.com/gh/sbalci/histopathR)
 [![Requirements
 Status](https://requires.io/github/sbalci/histopathR/requirements.svg?branch=master)](https://requires.io/github/sbalci/histopathR/requirements/?branch=master)
 [![Libraries.io dependency status for GitHub
 repo](https://img.shields.io/librariesio/github/sbalci/histopathR.svg)](https://libraries.io/github/sbalci/histopathR)
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/sbalci/histopathR.svg)](https://github.com/sbalci/histopathR/commits/master)
-[![Daily downloads
-badge](https://cranlogs.r-pkg.org/badges/last-day/histopathR?color=blue)](https://CRAN.R-project.org/package=histopathR)
+<!-- [![Daily downloads badge](https://cranlogs.r-pkg.org/badges/last-day/histopathR?color=blue)](https://CRAN.R-project.org/package=histopathR) -->
 [![GitHub
 version](https://img.shields.io/badge/GitHub-0.0.0.9000-orange.svg?style=flat-square)](https://github.com/sbalci/histopathR/)
 [![GitHub
