@@ -23,4 +23,5 @@ exampleRmdFiles
 ^histopathR\.Rproj$
 ^RpackageBuildingGuide\.Rmd$
 ^RpackageBuildingGuide\.nb\.html$
-
+^\.circleci/$
+^\.circleci/config\.yml$
