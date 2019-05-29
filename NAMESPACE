@@ -3,3 +3,4 @@
 export(describeContinious)
 export(fnumeric)
 export(generateDescriptiveCode)
+importFrom(magrittr,"%>%")

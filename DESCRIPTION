@@ -43,5 +43,6 @@ Imports:
     kableExtra,
     knitr,
     magicfor,
-    dplyr
+    dplyr,
+    magrittr
 VignetteBuilder: knitr

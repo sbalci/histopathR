@@ -4,6 +4,9 @@
 #' @param fileLokalization character
 #'
 #' @return file
+#' 
+#' @importFrom magrittr "%>%"
+#' 
 #' @export
 #'
 #' @examples

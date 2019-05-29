@@ -20,3 +20,7 @@ exampleRmdFiles
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
 ^CONTRIBUTING\.md$
+^histopathR\.Rproj$
+^RpackageBuildingGuide\.Rmd$
+^RpackageBuildingGuide\.nb\.html$
+

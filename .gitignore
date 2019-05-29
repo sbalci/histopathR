@@ -32,3 +32,5 @@ exampleR
 exampleRCodes
 exampleRmdFiles
 inst/doc
+RpackageBuildingGuide.Rmd
+RpackageBuildingGuide.nb.html
