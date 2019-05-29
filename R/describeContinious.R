@@ -1,4 +1,4 @@
-#' Descriptive Statistics For Continious Variables
+#' Descriptive statistics for continious variables
 #'
 #' @param mydata dataframe
 #' @param myvar vector

@@ -7,14 +7,19 @@
 fnumeric(x)
 }
 \arguments{
-\item{x}{factor}
+\item{x}{Factor.}
 }
 \value{
-numeric
+Numeric.
 }
 \description{
-Make numeric data from factor
+\code{fnumeric} converts factors to numeric data ignoring the levels
 }
+\section{Warning}{
+
+I recommend always to double-check after recoding.
+}
+
 \examples{
 a <- as.factor(c("2","4","6"))
 as.numeric(a)

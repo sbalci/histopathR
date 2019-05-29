@@ -1,0 +1,21 @@
+---
+title: "Data-Preperation-Histopathology-Research"
+output: rmarkdown::html_vignette
+author: "Serdar Balci"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{Data-Preperation-Histopathology-Research}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(histopathR)
+```

@@ -2,7 +2,7 @@
 % Please edit documentation in R/generateDescriptiveCode.R
 \name{generateDescriptiveCode}
 \alias{generateDescriptiveCode}
-\title{Generating Markdown Document With Descriptive Statistics Code}
+\title{Generating markdown document with descriptive statistics code}
 \usage{
 generateDescriptiveCode(dataframe, fileLokalization)
 }
@@ -15,7 +15,7 @@ generateDescriptiveCode(dataframe, fileLokalization)
 file
 }
 \description{
-Generating Markdown Document With Descriptive Statistics Code
+Generating markdown document with descriptive statistics code
 }
 \examples{
 generateDescriptiveCode <- function(dataframe, fileLokalization) {
@@ -35,7 +35,6 @@ feopgl \%>\%
 writeLines(magicfor::magic_result_as_vector(), fileLokalization)
 magicfor::magic_free()
 }
-
 
 
 

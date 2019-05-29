@@ -2,7 +2,7 @@
 % Please edit documentation in R/describeContinious.R
 \name{describeContinious}
 \alias{describeContinious}
-\title{Descriptive Statistics For Continious Variables}
+\title{Descriptive statistics for continious variables}
 \usage{
 describeContinious(mydata, myvar, ...)
 }
@@ -17,7 +17,7 @@ describeContinious(mydata, myvar, ...)
 list
 }
 \description{
-Descriptive Statistics For Continious Variables
+Descriptive statistics for continious variables
 }
 \examples{
 

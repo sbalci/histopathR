@@ -1,4 +1,4 @@
-#' Generating Markdown Document With Descriptive Statistics Code
+#' Generating markdown document with descriptive statistics code
 #'
 #' @param dataframe dataframe
 #' @param fileLokalization character
@@ -24,7 +24,6 @@
 #' writeLines(magicfor::magic_result_as_vector(), fileLokalization)
 #' magicfor::magic_free()
 #' }
-#' 
 #' 
 #' 
 #' 
