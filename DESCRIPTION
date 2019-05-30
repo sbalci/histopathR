@@ -27,21 +27,21 @@ Depends: R (>= 3.1.0)
 Suggests: 
     testthat (>= 2.1.0),
     covr,
-    rmarkdown
-Imports: 
+    rmarkdown,
+    ggstatsplot,
+    survival,
+    knitr,
     forcats,
-    readxl,
-    janitor,
     report,
     finalfit,
-    ggstatsplot,
-    jmv,
     lubridate,
     summarytools,
-    survival,
     psycho,
+    readxl
+Imports: 
+    janitor,
+    jmv,
     kableExtra,
-    knitr,
     magicfor,
     dplyr,
     magrittr

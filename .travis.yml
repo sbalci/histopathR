@@ -9,7 +9,6 @@ r_packages:
 r_github_packages:
     - rstudio/distill
     - easystats/report
-    - ropensci/magick
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
