@@ -27,4 +27,4 @@ exampleRmdFiles
 ^\.circleci/config\.yml$
 ^\.gitattributes$
 ^\.covrignore$
-
+^data-raw$
