@@ -28,16 +28,7 @@ Suggests:
     testthat (>= 2.1.0),
     covr,
     rmarkdown,
-    ggstatsplot,
-    survival,
-    knitr,
-    forcats,
-    report,
-    finalfit,
-    lubridate,
-    summarytools,
-    psycho,
-    readxl
+    knitr
 Imports: 
     janitor,
     jmv,
