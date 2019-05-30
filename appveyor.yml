@@ -1,3 +1,8 @@
 version: 1.0.{build}
 build:
   verbosity: minimal
+
+platform: x64
+
+environment:
+  R_ARCH: x64
