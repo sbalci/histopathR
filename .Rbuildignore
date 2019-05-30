@@ -26,3 +26,5 @@ exampleRmdFiles
 ^\.circleci/$
 ^\.circleci/config\.yml$
 ^\.gitattributes$
+^\.covrignore$
+

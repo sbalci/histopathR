@@ -3,12 +3,14 @@ language: r
 sudo: required
 
 r_packages:
-  - covr
+#  - covr
   - devtools
 
 r_github_packages:
     - rstudio/distill
     - easystats/report
+    - r-lib/covr
 
 after_success:
-  - Rscript -e 'library(covr); codecov()'
+#  - Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'covr::codecov()'
