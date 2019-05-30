@@ -25,3 +25,4 @@ exampleRmdFiles
 ^RpackageBuildingGuide\.nb\.html$
 ^\.circleci/$
 ^\.circleci/config\.yml$
+^\.gitattributes$
