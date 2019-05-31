@@ -74,12 +74,13 @@ knitr::opts_chunk$set(
 
 
 
-UNDER CONSTRUCTION 🛠⛔️⚠️
+UNDER CONSTRUCTION 🛠⛔️⚠️🔩
 
 https://sbalci.github.io/histopathR/
 
 
 ---
+
 
 🔬 **I plan to collect codes for future research. I will add some small functions.**  
 - Methods to import and prepare data for analysis.  
@@ -89,7 +90,9 @@ https://sbalci.github.io/histopathR/
 - Regression analysis.  
 - Cluster analysis.  
 
+
 🔬 **I plan to make template files to form when loading the package.**  
+
 
 🔬 **I plan two tutorial files as vignettes:**  
 - How to prepare data for histopathological research  

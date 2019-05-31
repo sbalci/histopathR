@@ -1,6 +1,6 @@
 Package: histopathR
 Type: Package
-Title: Collection Of R Codes Used in Histopathological Research 
+Title: Collection of R Codes Used in Histopathologic Research 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Serdar",
