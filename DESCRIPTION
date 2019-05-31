@@ -36,4 +36,6 @@ Imports:
     magicfor,
     dplyr,
     magrittr
+Remotes:
+    r-lib/covr
 VignetteBuilder: knitr
