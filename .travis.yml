@@ -1,16 +1,48 @@
 language: r
 
+warnings_are_errors: true
+cache: packages
 sudo: required
 
 r_packages:
-#  - covr
-  - devtools
+    - janitor
+    - jmv
+    - kableExtra
+    - magicfor
+    - pkgdown
+
+r_binary_packages:
+    - devtools
+    - testthat
+    - rmarkdown
+    - knitr
+    - dplyr
+    - magrittr
 
 r_github_packages:
     - rstudio/distill
     - easystats/report
     - r-lib/covr
 
+before_script:
+    - Rscript -e 'print("before script")'
+
+script:
+    - Rscript -e 'pkgdown::build_site()'
+
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_PAT
+    on:
+        branch: master
+    local_dir: docs
+    target_branch: gh-pages
+
+
 after_success:
 #  - Rscript -e 'library(covr); codecov()'
   - Rscript -e 'covr::codecov()'
+
+
+

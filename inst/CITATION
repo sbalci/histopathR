@@ -1,0 +1,14 @@
+citHeader("To cite histopathR in publications use:")
+
+citEntry(entry = "Unpublished",
+  title        = "Collection Of R Codes Used in Histopathological Research {histopathR}",
+  author       = personList(as.person("Serdar Balci")),
+  year         = "2019",
+  url          = "https://sbalci.github.io/histopathR/",
+  note         = "histopathR",
+
+  textVersion  =
+  paste("Serdar Balci (2019).",
+        "Collection Of R Codes Used in Histopathological Research histopathR.",
+        "URL https://sbalci.github.io/histopathR/.")
+)

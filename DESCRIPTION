@@ -28,8 +28,7 @@ Suggests:
     testthat (>= 2.1.0),
     covr,
     rmarkdown,
-    knitr,
-    covr
+    knitr
 Imports: 
     janitor,
     jmv,
@@ -37,6 +36,4 @@ Imports:
     magicfor,
     dplyr,
     magrittr
-Remotes: 
-    r-lib/covr
 VignetteBuilder: knitr
