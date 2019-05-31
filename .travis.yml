@@ -24,8 +24,17 @@ r_github_packages:
     - easystats/report
     - r-lib/covr
 
+
+after_success:
+#  - Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'covr::codecov()'
+
+
 before_script:
     - Rscript -e 'print("before script")'
+
+r_github_packages:
+    - sbalci/histopathR
 
 script:
     - Rscript -e 'pkgdown::build_site()'
@@ -40,9 +49,7 @@ deploy:
     target_branch: gh-pages
 
 
-after_success:
-#  - Rscript -e 'library(covr); codecov()'
-  - Rscript -e 'covr::codecov()'
+
 
 
 
