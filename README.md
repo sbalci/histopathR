@@ -22,6 +22,11 @@ Status](https://coveralls.io/repos/github/sbalci/histopathR/badge.svg?branch=mas
 Status](https://requires.io/github/sbalci/histopathR/requirements.svg?branch=master)](https://requires.io/github/sbalci/histopathR/requirements/?branch=master)
 [![Libraries.io dependency status for GitHub
 repo](https://img.shields.io/librariesio/github/sbalci/histopathR.svg)](https://libraries.io/github/sbalci/histopathR)
+[![CodeFactor](https://www.codefactor.io/repository/github/sbalci/histopathr/badge)](https://www.codefactor.io/repository/github/sbalci/histopathr)
+[![DepShield
+Badge](https://depshield.sonatype.org/badges/sbalci/histopathR/depshield.svg)](https://depshield.github.io)
+[![GuardRails
+badge](https://badges.guardrails.io/sbalci/histopathR.svg?token=13e00877a2660679719002a221904a94ad23d9cf7d31e176ad96aeabe1987be8)](https://dashboard.guardrails.io/default/gh/sbalci/histopathR)
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/sbalci/histopathR.svg)](https://github.com/sbalci/histopathR/commits/master)
 <!-- [![Daily downloads badge](https://cranlogs.r-pkg.org/badges/last-day/histopathR?color=blue)](https://CRAN.R-project.org/package=histopathR) -->
@@ -83,6 +88,12 @@ UNDER CONSTRUCTION 🛠⛔️⚠️🔩
 
 <https://sbalci.github.io/histopathR/>
 
+<a class="twitter-follow-button" data-show-count="false"
+  href="https://twitter.com/serdarbalci">Follow
+@serdarbalci</a>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 -----
 
 🔬 **I plan to collect codes for future research. I will add some small
@@ -101,3 +112,15 @@ functions.**
 \- How to analyse data for histopathological research
 
 -----
+
+**Double check if these packages have similar functions:**
+
+  - RSCABS: Rao-Scott Cochran-Armitage by Slices Trend Test
+
+Performs the Rao-Scott Cochran-Armitage by Slices trend test (RSCABS)
+used in analysis of histopathological endpoints, built to be used with
+either a GUI or by a command line. The RSCABS method is detailed in
+“Statistical analysis of histopathological endpoints” by John Green
+et. al. (2014) <doi:10.1002/etc.2530>.
+
+<https://cran.r-project.org/web/packages/RSCABS/index.html>

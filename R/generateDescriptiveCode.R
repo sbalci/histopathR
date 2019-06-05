@@ -5,7 +5,7 @@
 #'
 #' @return file
 #' 
-#' @importFrom magrittr "%>%"
+#' @importFrom magrittr '%>%'
 #' 
 #' @export
 #'
@@ -15,12 +15,12 @@
 #' magicfor::magic_for()
 #' 
 #' for (i in 1:length(names(dataframe))) {
-#'   y <- paste0("```{r}
+#'   y <- paste0('```{r}
 #' feopgl %>% 
-#'   janitor::tabyl(", names(dataframe)[i], ") %>%
+#'   janitor::tabyl(', names(dataframe)[i], ') %>%
 #'   adorn_pct_formatting(rounding = 'half up', digits = 1) %>%
 #'   knitr::kable()
-#' ```", "\n", "\n")
+#' ```', '\n', '\n')
 #'   magicfor::put(y)
 #' }
 #' 
@@ -47,20 +47,21 @@
 #' 
 #' 
 generateDescriptiveCode <- function(dataframe, fileLokalization) {
-
-magicfor::magic_for()
-
-for (i in 1:length(names(dataframe))) {
-    y <- paste0("```{r}
+    
+    magicfor::magic_for()
+    
+    for (i in 1:length(names(dataframe))) {
+        y <- paste0("```{r}
 feopgl %>% 
-  janitor::tabyl(", names(dataframe)[i], ") %>%
+  janitor::tabyl(", 
+            names(dataframe)[i], ") %>%
   adorn_pct_formatting(rounding = 'half up', digits = 1) %>%
   knitr::kable()
-```", "\n", "\n")
-    magicfor::put(y)
+```", 
+            "\n", "\n")
+        magicfor::put(y)
+    }
+    
+    writeLines(magicfor::magic_result_as_vector(), fileLokalization)
+    magicfor::magic_free()
 }
-
-writeLines(magicfor::magic_result_as_vector(), fileLokalization)
-magicfor::magic_free()
-}
-

@@ -21,4 +21,4 @@
 #' @docType package
 #' @name histopathR
 NULL
-#> NULL
+# > NULL
