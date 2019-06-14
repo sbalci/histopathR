@@ -1,7 +1,7 @@
 #' Generating markdown document with descriptive statistics code
 #'
-#' @param dataframe dataframe
-#' @param fileLokalization character
+#' @param df df
+#' 
 #'
 #' @return file
 #' 
@@ -10,23 +10,6 @@
 #' @export
 #'
 #' @examples
-#' generateDescriptiveCode <- function(dataframe, fileLokalization) {
-#' 
-#' magicfor::magic_for()
-#' 
-#' for (i in 1:length(names(dataframe))) {
-#'   y <- paste0('```{r}
-#' feopgl %>% 
-#'   janitor::tabyl(', names(dataframe)[i], ') %>%
-#'   adorn_pct_formatting(rounding = 'half up', digits = 1) %>%
-#'   knitr::kable()
-#' ```', '\n', '\n')
-#'   magicfor::put(y)
-#' }
-#' 
-#' writeLines(magicfor::magic_result_as_vector(), fileLokalization)
-#' magicfor::magic_free()
-#' }
 #' 
 #' 
 #' 
@@ -37,31 +20,37 @@
 #' 
 #' 
 #' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-generateDescriptiveCode <- function(dataframe, fileLokalization) {
-    
-    magicfor::magic_for()
-    
-    for (i in 1:length(names(dataframe))) {
-        y <- paste0("```{r}
-feopgl %>% 
-  janitor::tabyl(", 
-            names(dataframe)[i], ") %>%
+generateDescriptiveCode <- function(df) {
+  
+  namesdf <- attributes(df)$names
+  
+  namedf <- deparse(substitute(df))
+  
+  magicfor::magic_for()
+  
+  for (i in 1:length(namesdf)) {
+    y <- paste0("```{r ", namesdf[i], "}","\n",
+                namedf, " %>% 
+  janitor::tabyl(", namesdf[i], ") %>%
+  adorn_totals('row') %>%
   adorn_pct_formatting(rounding = 'half up', digits = 1) %>%
   knitr::kable()
-```", 
-            "\n", "\n")
-        magicfor::put(y)
-    }
+```"
+                
+                , "\n", "\n")
     
-    writeLines(magicfor::magic_result_as_vector(), fileLokalization)
-    magicfor::magic_free()
+    magicfor::put(y)
+  }
+  
+  filelokalization <- paste0(namedf, "_descriptiveCode.Rmd") 
+  
+  writeLines(
+    as.character(
+      magicfor::magic_result_as_vector()
+    ),
+    filelokalization)
+  
+  magicfor::magic_free()    
+  
 }
+
