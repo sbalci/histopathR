@@ -21,7 +21,7 @@ I recommend always to double-check after recoding.
 }
 
 \examples{
-a <- as.factor(c("2","4","6"))
+a <- as.factor(c('2','4','6'))
 as.numeric(a)
 fnumeric(a)
 }
