@@ -86,13 +86,26 @@ Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://sayth
 
 UNDER CONSTRUCTION 🛠⛔️⚠️🔩
 
-<https://sbalci.github.io/histopathR/>
+htCompleting a package will take some time. That is why I have started a
+template repository on GitHub.  
+<https://github.com/sbalci/histopathology-template/>  
+<https://sbalci.github.io/histopathology-template/>
 
-<a class="twitter-follow-button" data-show-count="false"
-  href="https://twitter.com/serdarbalci">Follow
+These templates will allow me to make histopathology research data
+analysis easier and more standard.
+
+tps://sbalci.github.io/histopathR/
+
+<a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/serdarbalci">Follow
 @serdarbalci</a>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[![contributions
+welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sbalci/histopathR/issues)
+[![Say
+Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sbalci)
+[![HitCount](http://hits.dwyl.io/sbalci/histopathR.svg)](http://hits.dwyl.io/sbalci/histopathR)
 
 -----
 
@@ -121,6 +134,6 @@ Performs the Rao-Scott Cochran-Armitage by Slices trend test (RSCABS)
 used in analysis of histopathological endpoints, built to be used with
 either a GUI or by a command line. The RSCABS method is detailed in
 “Statistical analysis of histopathological endpoints” by John Green
-et. al. (2014) <doi:10.1002/etc.2530>.
+et. al. (2014) <doi:10.1002/etc.2530>.
 
 <https://cran.r-project.org/web/packages/RSCABS/index.html>
