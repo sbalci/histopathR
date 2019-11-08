@@ -30,4 +30,4 @@ exampleRmdFiles
 ^data-raw$
 ^FUNDING\.yml$
 pdf
-rennovate.json
+renovate.json
