@@ -29,4 +29,5 @@ exampleRmdFiles
 ^\.covrignore$
 ^data-raw$
 ^FUNDING\.yml$
-
+pdf
+rennovate.json

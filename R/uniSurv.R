@@ -13,9 +13,9 @@ mysurvival <- function(mydata, mydependent, explanatory) {
         )
 }
 
-library(tidyverse)
-mysurvival(mydata = whippleables, mydependent = mydependent, explanatory = explanatory)
-
-explanatory <- c("Organ", "LVI")
-
-deneme <- purrr::map(explanatory, mysurvival, mydata = whippleables, mydependent = mydependent)
+# library(tidyverse)
+# mysurvival(mydata = whippleables, mydependent = mydependent, explanatory = explanatory)
+# 
+# explanatory <- c("Organ", "LVI")
+# 
+# deneme <- purrr::map(explanatory, mysurvival, mydata = whippleables, mydependent = mydependent)

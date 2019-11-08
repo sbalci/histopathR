@@ -86,7 +86,7 @@ Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://sayth
 
 UNDER CONSTRUCTION 🛠⛔️⚠️🔩
 
-htCompleting a package will take some time. That is why I have started a
+Completing a package will take some time. That is why I have started a
 template repository on GitHub.  
 <https://github.com/sbalci/histopathology-template/>  
 <https://sbalci.github.io/histopathology-template/>
@@ -94,7 +94,7 @@ template repository on GitHub.
 These templates will allow me to make histopathology research data
 analysis easier and more standard.
 
-tps://sbalci.github.io/histopathR/
+<https://sbalci.github.io/histopathR/>
 
 <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/serdarbalci">Follow
 @serdarbalci</a>

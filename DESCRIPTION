@@ -35,7 +35,8 @@ Imports:
     kableExtra,
     magicfor,
     dplyr,
-    magrittr
+    magrittr,
+    finalfit
 Remotes:
     r-lib/covr
 VignetteBuilder: knitr

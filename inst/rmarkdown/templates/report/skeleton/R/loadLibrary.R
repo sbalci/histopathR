@@ -1,5 +1,5 @@
 suppressPackageStartupMessages({
-    library("tidyverse")
+    library("dplyr")
     library("readxl")
     library("janitor")
     library("report")
@@ -11,30 +11,3 @@ suppressPackageStartupMessages({
     library("survival")
     library("psycho")
 })
-
-
-
-
-
-# citation("tidyverse")
-# citation("readxl")
-# citation("janitor")
-# citation("report")
-
-
-# not used
-# citation("foreign")
-# citation("tidylog")
-# citation("jmv")
-# citation("tangram")
-# citation("summarytools")
-
-
-
-
-
-
-
-
-
-

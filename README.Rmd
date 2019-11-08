@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r global options, include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -79,7 +79,7 @@ knitr::opts_chunk$set(
 
 UNDER CONSTRUCTION 🛠⛔️⚠️🔩
 
-htCompleting a package will take some time. That is why I have started a template repository on GitHub.  
+Completing a package will take some time. That is why I have started a template repository on GitHub.  
 https://github.com/sbalci/histopathology-template/  
 https://sbalci.github.io/histopathology-template/  
 
@@ -88,7 +88,7 @@ These templates will allow me to make histopathology research data analysis easi
 
 
 
-tps://sbalci.github.io/histopathR/
+https://sbalci.github.io/histopathR/
 
 <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/serdarbalci">Follow @serdarbalci</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
