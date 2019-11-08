@@ -3,7 +3,7 @@
 ## impute continious
 
 
-```{r dlookr impute, eval=FALSE, include=FALSE}
+```{r dlookr impute, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
 # https://cran.r-project.org/web/packages/dlookr/vignettes/transformation.html
 
 income <- dlookr::imputate_na(carseats, Income, US, method = "rpart")
@@ -54,7 +54,7 @@ plot(price)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, eval=FALSE, include=FALSE}
 carseats %>%
   mutate(Price_imp = dlookr::imputate_outlier(carseats, Price, method = "capping")) %>%
   group_by(US) %>%

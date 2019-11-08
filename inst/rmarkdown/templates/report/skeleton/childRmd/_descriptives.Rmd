@@ -1,22 +1,42 @@
+
 # Descriptive Statistics
 
 
 ## Table 1  
 
+**Report Data**
+
 ```{r report data, eval=FALSE, include=FALSE}
-report::report(mydata)
+mydata %>%
+  dplyr::select(-dplyr::contains("Date")) %>%
+  report::report()
 ```
 
 
 
 ```{r arsenal Table 1, results='asis', eval=FALSE, include=FALSE}
 # cat(names(mydata), sep = " + \n")
-
 library(arsenal)
-tab1 <- tableby(~ Cinsiyet + 
-Yas
-                ,
-                data = mydata)
+tab1 <- arsenal::tableby(
+  ~ Sex +
+    Age +
+    Race +
+    PreinvasiveComponent +
+    LVI +
+    PNI +
+    Death +
+    Group +
+    Grade +
+    TStage +
+    `Anti-X-intensity` +
+    `Anti-Y-intensity` +
+    LymphNodeMetastasis +
+    Valid +
+    Smoker +
+    Grade_Level
+  ,
+  data = mydata
+)
 summary(tab1)
 ```
 
@@ -29,38 +49,38 @@ summary(tab1)
 ```{r tableone, eval=FALSE, include=FALSE}
 library(tableone)
 library(survival)
-data(pbc)
-CreateTableOne(data = pbc)
+# data(pbc)
+CreateTableOne(data = mydata)
 ```
 
 
 ```{r tableone 2, eval=FALSE, include=FALSE}
-CreateTableOne(vars = myVars, data = pbc, factorVars = catVars)
+# CreateTableOne(vars = myVars, data = pbc, factorVars = catVars)
 ```
 
 
 ```{r tableone 3, eval=FALSE, include=FALSE}
-tab <- CreateTableOne(vars = myVars, data = pbc, factorVars = catVars)
-print(tab, showAllLevels = TRUE)
-?print.TableOne
-summary(tab)
+# tab <- CreateTableOne(vars = myVars, data = pbc, factorVars = catVars)
+# print(tab, showAllLevels = TRUE)
+# ?print.TableOne
+# summary(tab)
 ```
 
 
 
 
 ```{r tableone nonnormal values, eval=FALSE, include=FALSE}
-print(tab, nonnormal = biomarkers)
+# print(tab, nonnormal = biomarkers)
 ```
 
 
 ```{r tableone copy to excel, eval=FALSE, include=FALSE}
-print(tab, nonnormal = biomarkers, exact = "stage", quote = TRUE, noSpaces = TRUE)
+# print(tab, nonnormal = biomarkers, exact = "stage", quote = TRUE, noSpaces = TRUE)
 ```
 
 
 ```{r tableone export to csv, eval=FALSE, include=FALSE}
-tab3Mat <- print(tab3, nonnormal = biomarkers, exact = "stage", quote = FALSE, noSpaces = TRUE, printToggle = FALSE)
+# tab3Mat <- print(tab3, nonnormal = biomarkers, exact = "stage", quote = FALSE, noSpaces = TRUE, printToggle = FALSE)
 # write.csv(tab3Mat, file = "myTable.csv")
 ```
 
@@ -148,7 +168,7 @@ mydataDescription %>%
 
 
 
-```{r generate Code descriptive, include=FALSE, eval=FALSE, include=FALSE}
+```{r generate Code descriptive, eval=FALSE, include=FALSE}
 source(here::here("R", "generatingCodeForDescriptiveStatistics.R"))
 ```
 
@@ -267,7 +287,7 @@ questionr:::icut()
 
 
 
-```{r select continious variables, eval=FALSE, include=FALSE}
+```{r select continious variables 1, eval=FALSE, include=FALSE}
 mydataContinious <- mydata %>% 
     select(
         Yas,
@@ -277,7 +297,7 @@ mydataContinious <- mydata %>%
 
 
 
-```{r define continious variables, eval=FALSE, include=FALSE}
+```{r define continious, eval=FALSE, include=FALSE}
 mydataDescription <- describer::describe(iris)
 
 mydataDescription %>% 
@@ -289,7 +309,7 @@ mydataDescription %>%
 
 
 
-```{r generate Code Continious, include=FALSE, eval=FALSE, include=FALSE}
+```{r generate Code Continious, eval=FALSE, include=FALSE}
 source(here::here("R", "generatingCodeForContinious.R"))
 ```
 
@@ -371,7 +391,7 @@ grouped_descr %>% tb(order = 2)
 ```
 
 
-```{r dlookr, eval=FALSE, include=FALSE}
+```{r dlookr descriptives, eval=FALSE, include=FALSE}
 carseats %>%
   group_by(US) %>% 
   dlookr::describe(Sales, Income) 

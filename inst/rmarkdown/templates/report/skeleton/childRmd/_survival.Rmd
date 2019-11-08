@@ -52,7 +52,7 @@ explanatoryKM <- c("explanatory1",
 ```
 
 
-```{r generate Code, include=FALSE, eval=FALSE, include=FALSE}
+```{r generate Code, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
 source(here::here("R", "generatingCodeForSurvival.R"))
 ```
 
@@ -64,7 +64,7 @@ source(here::here("R", "generatingCodeForSurvival.R"))
 
 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, eval=FALSE, include=FALSE}
 mydependent <-  "Surv(time, status)"
 explanatory <- "Organ"
 

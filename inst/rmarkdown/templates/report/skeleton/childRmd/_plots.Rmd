@@ -16,7 +16,7 @@ explanatory <- c("explanatory1",
 
 
 
-```{r select categorical, eval=FALSE, include=FALSE}
+```{r select categorical, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
 mydataCategorical <- mydata %>% 
     select(-var1,
            -var2
@@ -585,7 +585,7 @@ inspectdf::inspect_cat(star_1, star_2) %>% inspectdf::show_plot()
 ## Continious Variables
 
 
-```{r}
+```{r, eval=FALSE, include=FALSE}
 # mydataContinious
 ```
 
@@ -610,7 +610,7 @@ inspectdf::inspect_cat(star_1, star_2) %>% inspectdf::show_plot()
 
 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, eval=FALSE, include=FALSE}
 mydata %>%
     select(institution, starts_with("Slide")) %>%
     pivot_longer(cols = starts_with("Slide")) %>%
@@ -620,7 +620,7 @@ p + geom_jitter(aes(colour = institution))
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, eval=FALSE, include=FALSE}
 dxchanges <- mydata %>%
     select(bx_no, starts_with("Slide")) %>% 
     filter(complete.cases(.)) %>%

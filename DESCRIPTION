@@ -1,6 +1,6 @@
 Package: histopathR
 Type: Package
-Title: Collection of R Codes Used in Histopathologic Research 
+Title: Template and R Codes Used in Histopathologic Research 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Serdar",
@@ -23,7 +23,7 @@ LazyData: true
 RoxygenNote: 6.1.1
 URL: https://sbalci.github.io/histopathR/
 BugReports: https://github.com/sbalci/histopathR/issues
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.5.0)
 Suggests: 
     testthat (>= 2.1.0),
     covr,

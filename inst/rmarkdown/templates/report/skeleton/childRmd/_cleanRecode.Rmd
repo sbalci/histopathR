@@ -1,6 +1,6 @@
 
 
-```{r clean names, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
+```{r clean names, eval=FALSE, include=FALSE}
 mydata <- janitor::clean_names(mydata)
 # cat(names(mydata), sep = ",\n")
 # names(mydata) <- c(names(mydata)[1:21], paste0("Soru", 1:30))
@@ -61,7 +61,7 @@ colon_s %>%
 
 
 
-```{r check_recode finalfit}
+```{r check_recode finalfit, eval=FALSE, include=FALSE}
 # Install
 # devtools::install_github('ewenharrison/finalfit')
 library(finalfit)
@@ -83,7 +83,7 @@ colon_s_small %>%
 ```
 
 
-```{r check_recode numeric finalfit}
+```{r check_recode numeric finalfit, eval=FALSE, include=FALSE}
 out = colon_s_small %>%
   select(-extent, -extent.factor,-time, -time.years) %>% # choose to exclude variables
   check_recode(include_numerics = TRUE)
@@ -93,7 +93,7 @@ out = colon_s_small %>%
 
 
 
-```{r, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
+```{r, eval=FALSE, include=FALSE}
 ## Recoding mydata$cinsiyet into mydata$Cinsiyet
 mydata$Cinsiyet <- recode(mydata$cinsiyet,
                "K" = "Kadin",
@@ -381,7 +381,7 @@ iSelectColumn.R
 
 
 
-```{r clean names 2, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
+```{r clean names 2, eval=FALSE, include=FALSE}
 mydata <- janitor::clean_names(mydata)
 # cat(names(mydata), sep = ",\n")
 
@@ -391,7 +391,7 @@ names(mydata) <- c(names(mydata)[1:21], paste0("Soru", 1:30))
 
 
 
-```{r eval=FALSE, include=FALSE, results='asis'}
+```{r eval=FALSE, results='asis', eval=FALSE, include=FALSE}
 library(arsenal)
 tab1 <- tableby(~ katilim_durumu
                 ,
@@ -413,7 +413,7 @@ mydata <- mydata %>%
 
 
 
-```{r summary 2}
+```{r summary 2, eval=FALSE, include=FALSE}
 # summarytools::view(summarytools::dfSummary(mydata))
 # glimpse(mydata)
 # mydata %>%

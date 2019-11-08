@@ -1,11 +1,11 @@
 # Define Variable Types
 
 ```{r define continious variables, eval=FALSE, include=FALSE}
-mydataDescription <- describer::describe(iris)
+mydataDescription <- describer::describe(mydata)
 
 mydataDescription %>% 
     janitor::clean_names() %>% 
-    dplyr::filter(column_class == "numeric") %>% 
+    dplyr::filter(column_type == "numeric" | column_type == "double") %>% 
     dplyr::select(column_name) %>% 
     dplyr::pull() -> continiousVariables
 ```
@@ -42,9 +42,10 @@ inspectdf::inspect_types(starwars) %>%
 
 
 ```{r inspectdf column types 2, eval=FALSE, include=FALSE}
-inspectdf::inspect_types(starwars) %>% inspectdf::show_plot()
 
-inspectdf::inspect_types(star_1, star_2)
+inspectdf::inspect_types(mydata) %>% inspectdf::show_plot()
+
+# inspectdf::inspect_types(star_1, star_2)
 ```
 
 
@@ -73,15 +74,15 @@ glimpse(mydata)
 library(dplyr, warn.conflicts = FALSE)
 library(describer)
 
-mtcars %>% 
-  describe %>% 
+mydata %>% 
+  describer::describe() %>% 
   knitr::kable(format = "markdown")
 ```
 
 
 ```{r describer group_by, eval=FALSE, include=FALSE}
-mtcars %>% 
-  group_by(cyl) %>% 
+mydata %>% 
+  group_by(Grade) %>% 
   do(describe(.)) %>% 
   knitr::kable(format = "markdown")
 ```
@@ -89,9 +90,10 @@ mtcars %>%
 
 
 ```{r describer 2, eval=FALSE, include=FALSE}
-describe(mtcars)
-describe(iris)
-describe(state.name)
+describer::describe(mydata)
+# describe(mtcars)
+# describe(iris)
+# describe(state.name)
 ```
 
 
@@ -152,9 +154,9 @@ visdat::vis_compare(chickwts_diff, chickwts)
 # library(DataExplorer)
 # data_list <- list(airlines, airports, flights, planes, weather)
 
-DataExplorer::plot_str(data_list)
+DataExplorer::plot_str(mydata)
 
-DataExplorer::plot_str(data_list, type = "r")
+DataExplorer::plot_str(mydata, type = "r")
 
 
 # merge_airlines <- merge(flights, airlines, by = "carrier", all.x = TRUE)
@@ -162,28 +164,28 @@ DataExplorer::plot_str(data_list, type = "r")
 # merge_airports_origin <- merge(merge_planes, airports, by.x = "origin", by.y = "faa", all.x = TRUE, suffixes = c("_carrier", "_origin"))
 # final_data <- merge(merge_airports_origin, airports, by.x = "dest", by.y = "faa", all.x = TRUE, suffixes = c("_origin", "_dest"))
 
-DataExplorer::introduce(final_data)
+DataExplorer::introduce(mydata)
 
-DataExplorer::plot_intro(final_data)
+DataExplorer::plot_intro(mydata)
 
-DataExplorer::plot_missing(final_data)
+DataExplorer::plot_missing(mydata)
 
-final_data <- drop_columns(final_data, "speed")
+mydata2 <- DataExplorer::drop_columns(mydata, "TStage")
 
-plot_bar(final_data)
+DataExplorer::plot_bar(mydata)
 
-plot_bar(final_data, with = "arr_delay")
+DataExplorer::plot_bar(mydata, with = "Death")
 
-plot_histogram(final_data)
-
-
-final_data <- update_columns(final_data, "flight", as.factor)
+DataExplorer::plot_histogram(mydata)
 
 
-qq_data <- final_data[, c("arr_delay", "air_time", "distance", "seats")]
-plot_qq(qq_data, sampled_rows = 1000L)
+# final_data <- update_columns(final_data, "flight", as.factor)
 
-plot_correlation(na.omit(final_data), maxcat = 5L)
+
+# qq_data <- final_data[, c("arr_delay", "air_time", "distance", "seats")]
+# plot_qq(qq_data, sampled_rows = 1000L)
+
+# plot_correlation(na.omit(final_data), maxcat = 5L)
 
 
 
@@ -202,54 +204,59 @@ xray::distributions(airquality)
 
 
 ```{r dataMaid, eval=FALSE, include=FALSE}
-dataMaid::makeDataReport(mydata)
+dataMaid::makeDataReport(data = mydata, 
+                         file = here::here("out/dataMaid_mydata.Rmd"),
+                         replace = TRUE,
+                         openResult = FALSE
+                         )
 ```
 
 
 
-```{r dataMaid 2, eval=FALSE, include=FALSE}
-# https://cran.r-project.org/web/packages/dataMaid/vignettes/extending_dataMaid.html
+<!-- ```{r dataMaid 2, eval=FALSE, include=FALSE} -->
+<!-- # https://cran.r-project.org/web/packages/dataMaid/vignettes/extending_dataMaid.html -->
+<!-- library("dataMaid") -->
+<!-- dataMaid::makeDataReport(mydata, -->
+<!--   #add extra precheck function          -->
+<!--   preChecks = c("isKey", "isSingular", "isSupported", "isID"), -->
 
-dataMaid::makeDataReport(mydata,
-  #add extra precheck function         
-  preChecks = c("isKey", "isSingular", "isSupported", "isID"),
-      
-  #Add the extra summaries - countZeros() for character, factor, 
-  #integer, labelled and numeric variables and meanSummary() for integer, 
-  #numeric and logical variables:
-  summaries = setSummaries(
-    character = defaultCharacterSummaries(add = "countZeros"),
-    factor = defaultFactorSummaries(add = "countZeros"),
-    labelled = defaultLabelledSummaries(add = "countZeros"),
-    numeric = defaultNumericSummaries(add = c("countZeros", "meanSummary")),
-    integer = defaultIntegerSummaries(add = c("countZeros", "meanSummary")),
-    logical = defaultLogicalSummaries(add =  c("meanSummary"))
-  ),
-  
-  #choose mosaicVisual() for categorical variables,
-  #prettierHist() for all others:
-  visuals = setVisuals(
-    factor = "mosaicVisual",
-    numeric = "prettierHist",
-    integer = "prettierHist", 
-    Date = "prettierHist"
-  ), 
-      
-  #Add the new checkFunction, identifyColons, for character, factor and 
-  #labelled variables:
-  checks = setChecks(
-    character = defaultCharacterChecks(add = "identifyColons"),
-    factor = defaultFactorChecks(add = "identifyColons"),
-    labelled = defaultLabelledChecks(add = "identifyColons")
-  ),
-  
-  #overwrite old versions of the report, render to html and don't 
-  #open the html file automatically:
-  replace = TRUE, 
-  output = "html",
-  open = FALSE
-)
-```
+<!--   #Add the extra summaries - countZeros() for character, factor,  -->
+<!--   #integer, labelled and numeric variables and meanSummary() for integer,  -->
+<!--   #numeric and logical variables: -->
+<!--   summaries = setSummaries( -->
+<!--     character = defaultCharacterSummaries(add = "countZeros"), -->
+<!--     factor = defaultFactorSummaries(add = "countZeros"), -->
+<!--     labelled = defaultLabelledSummaries(add = "countZeros"), -->
+<!--     numeric = defaultNumericSummaries(add = c("countZeros", "meanSummary")), -->
+<!--     integer = defaultIntegerSummaries(add = c("countZeros", "meanSummary")), -->
+<!--     logical = defaultLogicalSummaries(add =  c("meanSummary")) -->
+<!--   ), -->
+
+<!--   #choose mosaicVisual() for categorical variables, -->
+<!--   #prettierHist() for all others: -->
+<!--   visuals = setVisuals( -->
+<!--     factor = "mosaicVisual", -->
+<!--     numeric = "prettierHist", -->
+<!--     integer = "prettierHist",  -->
+<!--     Date = "prettierHist" -->
+<!--   ),  -->
+
+<!--   #Add the new checkFunction, identifyColons, for character, factor and  -->
+<!--   #labelled variables: -->
+<!--   checks = setChecks( -->
+<!--     character = defaultCharacterChecks(add = "identifyColons"), -->
+<!--     factor = defaultFactorChecks(add = "identifyColons"), -->
+<!--     labelled = defaultLabelledChecks(add = "identifyColons") -->
+<!--   ), -->
+
+<!--   #overwrite old versions of the report, render to html and don't  -->
+<!--   #open the html file automatically: -->
+<!--   replace = TRUE,  -->
+<!--   output = "html", -->
+<!--   open = FALSE, -->
+<!--   file = here::here("out/dataMaid_mydata.Rmd") -->
+<!-- ) -->
+<!-- ``` -->
 
 
 
@@ -286,11 +293,10 @@ st_options(bootstrap.css     = FALSE,       # Already part of the theme so no ne
 
 
 ```{r summarytools frequencies, eval=FALSE, include=FALSE}
-library()
-freq(iris$Species, plain.ascii = FALSE, style = "rmarkdown")
-freq(iris$Species, report.nas = FALSE, headings = FALSE, cumul = TRUE, totals = TRUE)
-freq(tobacco$gender, style = 'rmarkdown')
-freq(tobacco[ ,c("gender", "age.gr", "smoker")])
+summarytools::freq(iris$Species, plain.ascii = FALSE, style = "rmarkdown")
+summarytools::freq(iris$Species, report.nas = FALSE, headings = FALSE, cumul = TRUE, totals = TRUE)
+summarytools::freq(tobacco$gender, style = 'rmarkdown')
+summarytools::freq(tobacco[ ,c("gender", "age.gr", "smoker")])
 ```
 
 
@@ -316,9 +322,11 @@ print(dfSummary(tobacco, graph.magnif = 0.75), method = 'render')
 ```
 
 
+
+
 ```{r summarytools save output, eval=FALSE, include=FALSE}
-view(iris_stats_by_species,
-     file = here::here("out", "iris_stats_by_species.html")
+summarytools::view(mydata,
+                   file = here::here("out", "mydata_summary.html")
 )
 ```
 
@@ -335,7 +343,7 @@ view(iris_stats_by_species,
 # library(dplyr)
 # library(explore)
 
-explore::explore(iris)
+explore::explore(mydata)
 
 # iris %>% report(output_file = "report.html", output_dir = here::here())
 
@@ -350,7 +358,7 @@ explore::explore(iris)
 ```
 
 
-```{r explore 2, eval=FALSE, include=FALSE}
+```{r explore 2, eval=FALSE, include=FALSE, eval=FALSE, include=FALSE}
 iris %>% explore::explore_tbl()
 mtcars %>% explore::explore_tbl()
 
@@ -389,15 +397,18 @@ iris %>%
 ```
 
 
-```{r explore 3, eval=FALSE, include=FALSE, fig.height=explore::total_fig_height(iris)}
+```{r explore 3, fig.height=explore::total_fig_height(iris), eval=FALSE, include=FALSE}
 iris %>% 
   explore::explore_all()
 ```
 
 
-```{r explore 4, eval=FALSE, fig.height=explore::total_fig_height(iris, target = Species), explore::total_fig_height(iris, target=, include=FALSE}
-iris %>% explore::explore_all(target = Species)
-```
+<!-- ```{r explore 4, fig.height='r explore::total_fig_height(iris, target = Species)', eval=FALSE, include=FALSE} -->
+
+<!-- explore::total_fig_height(iris, target = Species) -->
+
+<!-- iris %>% explore::explore_all(target = Species) -->
+<!-- ``` -->
 
 
 ```{r explore min-max, eval=FALSE, include=FALSE}
@@ -405,12 +416,12 @@ iris %>% explore::explore(Sepal.Length, min_val = 4.5, max_val = 7)
 ```
 
 
-```{r explore 5}
+```{r explore 5, eval=FALSE, include=FALSE}
 iris %>% explore::explore(Sepal.Length, auto_scale = FALSE)
 ```
 
 
-```{r explore describe}
+```{r explore describe, eval=FALSE, include=FALSE}
 mtcars %>% explore::describe()
 ```
 
@@ -459,7 +470,7 @@ carseats %>%
 
 
 
-```{r SmartEDA, eval=FALSE, include=FALSE}
+```{r SmartEDA ExpData, eval=FALSE, include=FALSE}
 # install.packages("ISLR")
 library("ISLR")
 # install.packages("SmartEDA")
