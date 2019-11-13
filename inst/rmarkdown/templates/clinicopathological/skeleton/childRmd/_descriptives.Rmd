@@ -1,20 +1,20 @@
+**Codes for Descriptive Statistics**^[See `childRmd/_descriptives.Rmd` file for other codes]
 
-# Descriptive Statistics
 
+### Table 1  
 
-## Table 1  
+**Report Data properties via report 📦**
 
-**Report Data**
-
-```{r report data, eval=FALSE, include=FALSE}
+```{r report data}
 mydata %>%
   dplyr::select(-dplyr::contains("Date")) %>%
   report::report()
 ```
 
 
+**Table 1 via arsenal 📦**
 
-```{r arsenal Table 1, results='asis', eval=FALSE, include=FALSE}
+```{r arsenal Table 1, results='asis'}
 # cat(names(mydata), sep = " + \n")
 library(arsenal)
 tab1 <- arsenal::tableby(
@@ -41,16 +41,19 @@ summary(tab1)
 ```
 
 
-<!-- https://cran.r-project.org/web/packages/tableone/index.html -->
-<!-- https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html -->
 
+**Table 1 via tableone 📦**
 
-
-```{r tableone, eval=FALSE, include=FALSE}
-library(tableone)
-library(survival)
+```{r tableone}
+# https://cran.r-project.org/web/packages/tableone/index.html
+# https://cran.r-project.org/web/packages/tableone/vignettes/introduction.html
+# library(survival)
 # data(pbc)
-CreateTableOne(data = mydata)
+library(tableone)
+mydata %>% 
+  select(-ID,
+         -Name) %>% 
+tableone::CreateTableOne(data = .)
 ```
 
 
@@ -85,21 +88,23 @@ CreateTableOne(data = mydata)
 ```
 
 
+<!-- **Table 1 via atable 📦** -->
 
-<!-- atable -->
 <!-- https://cran.r-project.org/web/packages/atable/vignettes/atable_usage.pdf -->
 <!-- https://journal.r-project.org/archive/2019/RJ-2019-001/index.html -->
 
 
 
+**Descriptive Statistics of Continuous Variables**
 
-```{r summarytools descriptives 1, eval=FALSE, include=FALSE}
-descr(tobacco, style = 'rmarkdown')
+```{r summarytools descriptives 1}
+summarytools::descr(mydata, style = 'rmarkdown')
 ```
 
 
+
 ```{r summarytools descriptives 2, eval=FALSE, include=FALSE}
-print(descr(tobacco), method = 'render', table.classes = 'st-small')
+print(summarytools::descr(mydata), method = 'render', table.classes = 'st-small')
 ```
  
 
@@ -132,12 +137,14 @@ iris %>% explore::describe() %>% dplyr::filter(na > 0)
 
 
 
-## Categorical Variables
+### Categorical Variables
 
 
+**print column names as vector**
 
-```{r print names as vector, eval=FALSE, include=FALSE}
-dput(names(pbc))
+```{r print names as vector}
+dput(names(mydata))
+names(which(sapply(mydata, FUN = class) == "character"))
 ```
 
 
@@ -155,12 +162,16 @@ mydataCategorical <- mydata %>%
 
 
 
-```{r define continious variables 1, eval=FALSE, include=FALSE}
-mydataDescription <- describer::describe(iris)
+```{r define categorical variables 1}
+mydata %>% 
+  dplyr::select(-ID,
+         -Name
+         ) %>% 
+  describer::describe() %>% 
+  janitor::clean_names() -> mydataDescription
 
 mydataDescription %>% 
-    janitor::clean_names() %>% 
-    dplyr::filter(column_class == "factor") %>% 
+    dplyr::filter(column_type == "factor") %>% 
     dplyr::select(column_name) %>% 
     dplyr::pull() -> categoricalVariables
 ```
@@ -229,7 +240,7 @@ inspectdf::inspect_cat(starwars)$levels$hair_color
 
 
 
-### Split-Group Stats Categorical
+#### Split-Group Stats Categorical
 
 ```{r summarytools Split-Group categorical, eval=FALSE, include=FALSE}
 grouped_freqs <- stby(data = tobacco$smoker, 
@@ -245,7 +256,7 @@ grouped_freqs %>% tb(order = 2)
 
 
 
-### Grouped Categorical
+#### Grouped Categorical
 
 ```{r summarytools Grouped Categorical, eval=FALSE, include=FALSE}
 stby(list(x = tobacco$smoker, y = tobacco$diseased), tobacco$gender, ctable)
@@ -278,7 +289,7 @@ SmartEDA::ExpCTable(
 ---
 
 
-## Continious Variables
+### Continious Variables
 
 
 ```{r categorise cut off continious variables, eval=FALSE, include=FALSE}
@@ -378,7 +389,7 @@ inspectdf::inspect_num(storms, storms[-c(1:10), -1]) %>%
 
 
 
-### Split-Group Stats Continious
+#### Split-Group Stats Continious
 
 
 ```{r summarytools Split-Group continious, eval=FALSE, include=FALSE}
@@ -418,7 +429,7 @@ plot(cat_num)
 
 
 
-### Grouped Continious
+#### Grouped Continious
 
 ```{r summarytools Grouped Continious, eval=FALSE, include=FALSE}
 (iris_stats_by_species <- stby(data = iris, 

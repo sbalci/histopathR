@@ -4,19 +4,45 @@ description: |
   Codes Used in Histopathology Research  
   Data Report for Histopathology Research  
   Example Using Random Generated Fakedata
-author:
+author: 
   - name: Serdar Balci, MD, Pathologist
     url: https://sbalci.github.io/histopathology-template/
     affiliation: serdarbalci.com
     affiliation_url: https://www.serdarbalci.com/
 date: "`r Sys.Date()`"
+mail: drserdarbalci@gmail.com
+linkedin: "serdar-balci-md-pathologist"
+twitter: "serdarbalci"
+github: "sbalci"
+home: "https://www.serdarbalci.com/"
 header-includes:
 - \usepackage{pdflscape}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
 - \usepackage{xcolor}
 - \usepackage{afterpage}
-output: 
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: vignette
+    toc: true
+    number_sections: yes
+    css: css/style.css
+    includes:
+      after_body: _footer.html
+  rmarkdown::html_vignette: 
+    css: 
+    - !expr system.file("rmarkdown/templates/html_vignette/resources/vignette.css", package = "rmarkdown")
+  epuRate::epurate:
+    toc: TRUE
+    number_sections: FALSE
+    code_folding: "hide"
+  distill::distill_article:
+    toc: true
+  redoc::redoc:
+    highlight_outputs: TRUE
+    margins: 1 
+    line_numbers: FALSE 
   pdf_document: 
     fig_caption: yes
     highlight: kate
@@ -25,81 +51,145 @@ output:
     latex_engine: lualatex
     toc_depth: 5
     keep_tex: yes
-  rmarkdown::html_vignette: 
-    css: 
-    - !expr system.file("rmarkdown/templates/html_vignette/resources/vignette.css", package = "rmarkdown")
-  redoc::redoc:
-    highlight_outputs: TRUE
-    margins: 1 
-    line_numbers: FALSE 
-  distill::distill_article:
-    toc: true
 vignette: >
-  %\VignetteIndexEntry{Recommendations for Rmarkdown}
+  %\VignetteIndexEntry{Histopathology Research Template}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
+bibliography: bib/template.bib
 ---
+
+
+# Introduction
+
+- **State the marker of interest, the study objectives, and hypotheses**^[From Table 1: Proposed items for reporting histopathology studies. Recommendations for reporting histopathology studies: a proposal Virchows Arch (2015) 466:611–615 DOI 10.1007/s00428-015-1762-3]
+
+[@Knijn2015] 
+
+
+# Materials & Methods
+
+Material and methods
+
+- Describe patient characteristics, and inclusion and exclusion criteria
+
+- Describe treatment details
+
+- Describe the type of material used
+
+- Specify how expression of the biomarker was assessed
+
+- Describe the number of independent (blinded) scorers and how they scored
+
+- State the method of case selection, study design, origin of the cases, and time frame
+
+- Describe the end of the follow-up period and median follow-up time
+
+- Define all clinical endpoints examined
+
+- Specify all applied statistical methods
+
+- Describe how interactions with other clinical/pathological factors were analyzed
+
+
+
+# Study Population
+
+<!-- Kişisel veriler -->
+
+
+# Statistical Analysis
+
+<!-- Hangi testler bilinmeli makalesi -->
+
+# Results
+
+- Describe the number of patients included in the analysis and reason for dropout
+
+- Report patient/disease characteristics (including the biomarker of interest) with the number of missing values
+
+- Describe the interaction of the biomarker of interest with established prognostic variables
+
+- Include at least 90 % of initial cases included in univariate and multivariate analyses
+
+- Report the estimated effect (relative risk/odds ratio, confidence interval, and p value) in univariate analysis
+
+- Report the estimated effect (hazard rate/odds ratio, confidence interval, and p value) in multivariate analysis
+
+- Report the estimated effects (hazard ratio/odds ratio, confidence interval, and p value) of other prognostic factors included in multivariate analysis
+
+
+
+
+## Header Codes
 
 
 ```{r header, child = here::here('childRmd', '_header.Rmd')}
 ```
 
 
+---
+
+
+## Import Data
+
+
 ```{r importData, child = here::here('childRmd', '_importData.Rmd')}
 ```
 
+
+---
+
+
+<!-- ## Overview the Data -->
 
 <!-- ```{r overview, child = here::here('childRmd', '_overView.Rmd')} -->
 <!-- ``` -->
 
 
-```{r explore data dictionary, eval=FALSE, include=FALSE}
-# iris %>% explore::data_dict_md(output_dir = here::here())
-# description <- data.frame(
-#                   variable = c("Species"), 
-#                   description = c("Species of Iris flower"))
-
-data_dict_md(data = mydata, 
-             title = "Data Set", 
-             # description =  description, 
-             output_file = "data_dict.md",
-             output_dir = here::here("childRmd"))
-```
+<!-- --- -->
 
 
-<!-- ```{r data dictionary, child = here::here('childRmd', 'data_dict.md')} -->
+<!-- ## Data Dictionary -->
+
+<!-- ```{r data dictionary, child = here::here('childRmd', '_dataDictionary.Rmd')} -->
 <!-- ``` -->
 
+<!-- --- -->
 
 
+<!-- ## Clean and Recode Data -->
 
 <!-- ```{r clean and recode, child = here::here('childRmd', '_cleanRecode.Rmd')} -->
 <!-- ``` -->
 
+<!-- --- -->
 
-
+<!-- ## Impute Missing Data -->
 
 <!-- ```{r impute, child = here::here('childRmd', '_impute.Rmd')} -->
 <!-- ``` -->
 
+<!-- --- -->
+
+<!-- \pagebreak -->
 
 
-
-\pagebreak
-
+## Descriptive Statistics
 
 
-<!-- ```{r descriptives, child = here::here('childRmd', '_descriptives.Rmd')} -->
-<!-- ``` -->
+```{r descriptives, child = here::here('childRmd', '_descriptives.Rmd')}
+```
 
 
-\newpage
-\blandscape
+---
+
+<!-- \newpage -->
+<!-- \blandscape -->
 
 <!-- ```{r crossTables, child = here::here('childRmd', '_crossTables.Rmd')} -->
 <!-- ``` -->
 
-\elandscape
+<!-- \elandscape -->
 
 
 <!-- ```{r plots, child = here::here('childRmd', '_plots.Rmd')} -->
@@ -116,8 +206,8 @@ data_dict_md(data = mydata,
 <!-- ```{r hypothesisTests, child = here::here('childRmd', '_hypothesisTests.Rmd')} -->
 <!-- ``` -->
 
-\newpage
-\blandscape
+<!-- \newpage -->
+<!-- \blandscape -->
 
 
 
@@ -130,47 +220,75 @@ data_dict_md(data = mydata,
 
 
 
+# Survival Analysis
 
-<!-- ```{r survival, child = here::here('childRmd', '_survival.Rmd')} -->
+
+```{r survival, child = here::here('childRmd', '_survival.Rmd')}
+```
+
+
+---
+
+<!-- # Interactive Survival Analysis -->
+
+<!-- ```{r shiny survival, child = here::here('childRmd', '_shinySurvival.Rmd')} -->
 <!-- ``` -->
 
-\elandscape
+
+<!-- --- -->
+
+<!-- \elandscape -->
+
+
+<!-- # Models -->
 
 
 <!-- ```{r models, child = here::here('childRmd', '_models.Rmd')} -->
 <!-- ``` -->
 
 
+<!-- --- -->
+
+<!-- \pagebreak -->
+
+
+
+<!-- ```{r comments, child = here::here('childRmd', '_comments.Rmd')} -->
+<!-- ``` -->
+
+---
+
 \pagebreak
 
 
+# Discussion
 
-```{r comments, child = here::here('childRmd', '_comments.Rmd')}
-```
+- Interpret the results in context of the working hypothesis elaborated in the introduction and other relevant studies; include a discussion of limitations of the study.
 
-
-\pagebreak
-
-Comments Also Here
+- Discuss potential clinical applications and implications for future research
 
 \pagebreak
 
+
+# Footer
 
 ```{r footer, child = here::here('childRmd', '_footer.Rmd')}
 ```
 
+<!-- --- -->
 
-\pagebreak
-
-
-
-\newpage
+<!-- \pagebreak -->
 
 
-```{r git update}
-source(file = here::here("R", "gitUpdateCommitPush.R"))
-```
+<!-- **push all changes to GitHub repository**  -->
+
+<!-- ```{r git update} -->
+<!-- source(file = here::here("R", "gitUpdateCommitPush.R")) -->
+<!-- ``` -->
 
 
+<!-- --- -->
 
+
+# References
 

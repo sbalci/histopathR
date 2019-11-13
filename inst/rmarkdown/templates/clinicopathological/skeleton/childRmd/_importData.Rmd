@@ -1,17 +1,13 @@
 
-
-```{r generate fake data, include=FALSE}
-source(file = here::here("R", "generatingFakeData.R"))
-```
+**Codes for importing data.**^[See `childRmd/_importData.Rmd` file for other codes]
 
 
+**Use this code to read the data**
 
-
-
-```{r import data, include=FALSE}
+```{r import data}
 library(readxl)
 mydata <- readxl::read_excel(here::here("data", "mydata.xlsx"))
-# View(mydata)
+# View(mydata) # Use to view data after importing
 ```
 
 

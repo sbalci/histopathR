@@ -77,15 +77,18 @@ knitr::opts_chunk$set(
 
 
 
-UNDER CONSTRUCTION 🛠⛔️⚠️🔩
+**UNDER CONSTRUCTION** 🛠⛔️⚠️🔩  
 
 Completing a package will take some time. That is why I have started a template repository on GitHub.  
-https://github.com/sbalci/histopathology-template/  
-https://sbalci.github.io/histopathology-template/  
 
-These templates will allow me to make histopathology research data analysis easier and more standard.
+- https://github.com/sbalci/histopathology-template/  
+- https://sbalci.github.io/histopathology-template/  
+- https://sbalci.github.io/histopathology-template/Report.html  
 
-
+- These templates will allow me to make histopathology research data analysis easier and more standard.  
+- I have added clinicopathological analysis templates:  
+https://sbalci.github.io/histopathology-template/Report.html    
+- I plan to add bibliometrics, image analysis and text analysis templates as well.  
 
 
 https://sbalci.github.io/histopathR/
@@ -95,6 +98,21 @@ https://sbalci.github.io/histopathR/
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sbalci/histopathR/issues)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sbalci)
 [![HitCount](http://hits.dwyl.io/sbalci/histopathR.svg)](http://hits.dwyl.io/sbalci/histopathR)
+
+---
+
+
+```{r generate Clinicopathological Code Template, echo=TRUE, eval=FALSE}
+rmarkdown::draft(file = "myfile",
+                 template = "clinicopathological",
+                 package = "histopathR",
+                 create_dir = TRUE,
+                 edit = TRUE)
+```
+
+
+
+
 
 ---
 
@@ -116,19 +134,49 @@ https://sbalci.github.io/histopathR/
 - How to analyse data for histopathological research  
 
 
+---
+              
+
+
+{% if page.comments %}
+<script id="dsq-count-scr" src="//https-sbalci-github-io.disqus.com/count.js" async></script>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://https-sbalci-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %} 
 
 ---
 
-**Double check if these packages have similar functions:**
-
-- RSCABS: Rao-Scott Cochran-Armitage by Slices Trend Test
-
-Performs the Rao-Scott Cochran-Armitage by Slices trend test (RSCABS) used in analysis of histopathological endpoints, built to be used with either a GUI or by a command line. The RSCABS method is detailed in "Statistical analysis of histopathological endpoints" by John Green et. al. (2014) <doi:10.1002/etc.2530>.
-
-https://cran.r-project.org/web/packages/RSCABS/index.html
-
-
-
-
+&nbsp;
+<hr />
+<p style="text-align: center;">A work by <a href="https://github.com/sbalci/">Serdar Balci</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><em>drserdarbalci@gmail.com</em></span></p>
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+	<a href="https://twitter.com/serdarbalci" class="fa fa-twitter"></a>
+	<a href="https://www.linkedin.com/in/serdar-balci-md-pathologist/" class="fa fa-linkedin"></a>
+	<a href="https://github.com/sbalci/" class="fa fa-github"></a>
+</p>
+&nbsp;
 
 

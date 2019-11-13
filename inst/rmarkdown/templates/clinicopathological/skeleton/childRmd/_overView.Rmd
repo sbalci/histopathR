@@ -1,4 +1,42 @@
-# Define Variable Types
+
+**Codes for overviewing the data.**^[See `childRmd/_overView.Rmd` file for other codes]
+
+
+### Report General Features
+
+
+```{r}
+# Dataframe report
+mydata %>% 
+  select(-contains("Date")) %>%
+  report::report(.)
+```
+
+```r
+r <- report(iris)
+to_text(r)
+print(to_text(r), width=100)
+to_table(r)
+
+
+r <- iris %>% 
+  group_by(Species) %>% 
+  report(median = TRUE, range = FALSE)  # Display only the Median and MAD
+to_fulltext(r)
+to_fulltable(r)
+
+
+Report participants details
+
+data <- data.frame("Age" = c(22, 23, 54, 21),
+                   "Sex" = c("F", "F", "M", "M"))
+
+paste(report_participants(data, spell_n = TRUE),
+      "were recruited in the study.")
+```
+
+
+### Define Variable Types
 
 ```{r define continious variables, eval=FALSE, include=FALSE}
 mydataDescription <- describer::describe(mydata)
@@ -51,12 +89,7 @@ inspectdf::inspect_types(mydata) %>% inspectdf::show_plot()
 
 
 
-
-
-
-
-
-# Overview / Exploratory Data Analysis (EDA)
+### Overview / Exploratory Data Analysis (EDA)
 
 
 ```{r summarytools, eval=FALSE, include=FALSE}
@@ -83,7 +116,7 @@ mydata %>%
 ```{r describer group_by, eval=FALSE, include=FALSE}
 mydata %>% 
   group_by(Grade) %>% 
-  do(describe(.)) %>% 
+  do(describer::describe(.)) %>% 
   knitr::kable(format = "markdown")
 ```
 
@@ -213,50 +246,50 @@ dataMaid::makeDataReport(data = mydata,
 
 
 
-<!-- ```{r dataMaid 2, eval=FALSE, include=FALSE} -->
-<!-- # https://cran.r-project.org/web/packages/dataMaid/vignettes/extending_dataMaid.html -->
-<!-- library("dataMaid") -->
-<!-- dataMaid::makeDataReport(mydata, -->
-<!--   #add extra precheck function          -->
-<!--   preChecks = c("isKey", "isSingular", "isSupported", "isID"), -->
+```{r dataMaid 2, eval=FALSE, include=FALSE}
+# https://cran.r-project.org/web/packages/dataMaid/vignettes/extending_dataMaid.html
+library("dataMaid")
+dataMaid::makeDataReport(mydata,
+  #add extra precheck function
+  preChecks = c("isKey", "isSingular", "isSupported", "isID"),
 
-<!--   #Add the extra summaries - countZeros() for character, factor,  -->
-<!--   #integer, labelled and numeric variables and meanSummary() for integer,  -->
-<!--   #numeric and logical variables: -->
-<!--   summaries = setSummaries( -->
-<!--     character = defaultCharacterSummaries(add = "countZeros"), -->
-<!--     factor = defaultFactorSummaries(add = "countZeros"), -->
-<!--     labelled = defaultLabelledSummaries(add = "countZeros"), -->
-<!--     numeric = defaultNumericSummaries(add = c("countZeros", "meanSummary")), -->
-<!--     integer = defaultIntegerSummaries(add = c("countZeros", "meanSummary")), -->
-<!--     logical = defaultLogicalSummaries(add =  c("meanSummary")) -->
-<!--   ), -->
+  #Add the extra summaries - countZeros() for character, factor,
+  #integer, labelled and numeric variables and meanSummary() for integer,
+  #numeric and logical variables:
+  summaries = setSummaries(
+    character = defaultCharacterSummaries(add = "countZeros"),
+    factor = defaultFactorSummaries(add = "countZeros"),
+    labelled = defaultLabelledSummaries(add = "countZeros"),
+    numeric = defaultNumericSummaries(add = c("countZeros", "meanSummary")),
+    integer = defaultIntegerSummaries(add = c("countZeros", "meanSummary")),
+    logical = defaultLogicalSummaries(add =  c("meanSummary"))
+  ),
 
-<!--   #choose mosaicVisual() for categorical variables, -->
-<!--   #prettierHist() for all others: -->
-<!--   visuals = setVisuals( -->
-<!--     factor = "mosaicVisual", -->
-<!--     numeric = "prettierHist", -->
-<!--     integer = "prettierHist",  -->
-<!--     Date = "prettierHist" -->
-<!--   ),  -->
+  #choose mosaicVisual() for categorical variables,
+  #prettierHist() for all others:
+  visuals = setVisuals(
+    factor = "mosaicVisual",
+    numeric = "prettierHist",
+    integer = "prettierHist",
+    Date = "prettierHist"
+  ),
 
-<!--   #Add the new checkFunction, identifyColons, for character, factor and  -->
-<!--   #labelled variables: -->
-<!--   checks = setChecks( -->
-<!--     character = defaultCharacterChecks(add = "identifyColons"), -->
-<!--     factor = defaultFactorChecks(add = "identifyColons"), -->
-<!--     labelled = defaultLabelledChecks(add = "identifyColons") -->
-<!--   ), -->
+  #Add the new checkFunction, identifyColons, for character, factor and
+  #labelled variables:
+  checks = setChecks(
+    character = defaultCharacterChecks(add = "identifyColons"),
+    factor = defaultFactorChecks(add = "identifyColons"),
+    labelled = defaultLabelledChecks(add = "identifyColons")
+  ),
 
-<!--   #overwrite old versions of the report, render to html and don't  -->
-<!--   #open the html file automatically: -->
-<!--   replace = TRUE,  -->
-<!--   output = "html", -->
-<!--   open = FALSE, -->
-<!--   file = here::here("out/dataMaid_mydata.Rmd") -->
-<!-- ) -->
-<!-- ``` -->
+  #overwrite old versions of the report, render to html and don't
+  #open the html file automatically:
+  replace = TRUE,
+  output = "html",
+  open = FALSE,
+  file = here::here("out/dataMaid_mydata.Rmd")
+)
+```
 
 
 
@@ -499,7 +532,7 @@ SmartEDA::ExpData(data=Carseats,type=2)
 
 
 
-# Information value
+### Information value
 
 
 
@@ -520,7 +553,7 @@ SmartEDA::ExpCatStat(
 ```
 
 
-# Feature imbalance
+### Feature imbalance
 
 
 ```{r Feature imbalance inspectdf, eval=FALSE, include=FALSE}
@@ -536,7 +569,7 @@ inspectdf::inspect_imb(star_1, star_2) %>% inspectdf::show_plot()
 
 
 
-# Memory usage
+### Memory usage
   
 ```{r memory usage inspectdf, eval=FALSE, include=FALSE}
 inspectdf::inspect_mem(starwars)
@@ -566,8 +599,9 @@ inspectdf::inspect_mem(star_1, star_2) %>% inspectdf::show_plot()
 
 ---
 
-# SmartEDA
+### SmartEDA
 
+```r
 Create HTML EDA report
 
 Create a exploratory data analysis report in HTML format
@@ -580,6 +614,7 @@ Quantile-quantile plot for numeric variables
     ExpOutQQ(CData,nlim=10,fname=NULL,Page=c(2,2),sample=4)
 
 Parallel Co-ordinate plots
+
 
 ## Defualt ExpParcoord funciton
     ExpParcoord(CData,Group=NULL,Stsize=NULL,Nvar=c("Price","Income","Advertising","Population","Age",
@@ -694,17 +729,5 @@ ExpCustomStat(Carseats,Cvar = c("Urban","US","ShelveLoc"), Nvar=c("CompPrice","I
 ExpCustomStat(data_sam,Cvar = c("Urban","US","ShelveLoc"), Nvar=c("Sales","CompPrice","Income"), stat = c('Count','Prop','mean','sum','PS'), gpby = TRUE,filt="All %ni% c(888,999)")
 ExpCustomStat(Carseats,Cvar = c("Urban","US"), Nvar=c("Population","Sales","CompPrice"), stat = c('Count','Prop','mean','sum','var','min','max'), filt=c("ShelveLoc=='Good'^Urban=='Yes'^Price>=150"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 

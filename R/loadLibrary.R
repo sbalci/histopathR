@@ -1,0 +1,7 @@
+suppressPackageStartupMessages(library("dplyr"))
+suppressPackageStartupMessages(library("readxl"))
+suppressPackageStartupMessages(library("janitor"))
+suppressPackageStartupMessages(library("report"))
+suppressPackageStartupMessages(library("finalfit"))
+suppressPackageStartupMessages(library("ggstatsplot"))
+suppressPackageStartupMessages(library("wakefield"))

@@ -1,7 +1,7 @@
 Package: histopathR
 Type: Package
 Title: Template and R Codes Used in Histopathologic Research 
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Serdar",
            family = "Balci",
@@ -10,6 +10,8 @@ Authors@R:
            comment = c(ORCID = "0000-0002-7852-3851"))
 Maintainer: Serdar Balci <drserdarbalci@gmail.com>
 Description: This package is a collection of R codes that I use in my research.
+    I have added clinicopathological analysis templates.
+    I plan to add bibliometrics, image analysis and text analysis templates as well.
     It will include how to prepare data for statistical analysis.
     Methods to import and prepare data for analysis.
     Descriptive statistics.
@@ -36,7 +38,8 @@ Imports:
     magicfor,
     dplyr,
     magrittr,
-    finalfit
+    finalfit,
+    dataMaid
 Remotes:
     r-lib/covr
 VignetteBuilder: knitr
