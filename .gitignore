@@ -37,3 +37,5 @@ RpackageBuildingGuide.nb.html
 histopathR.Rproj
 ^data-raw$
 pdf
+renv
+*.gitignore
