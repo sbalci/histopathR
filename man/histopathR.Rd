@@ -3,7 +3,6 @@
 \docType{package}
 \name{histopathR}
 \alias{histopathR}
-\alias{histopathR-package}
 \title{histopathR: Collection Of R Codes Used in Histopathological Research.}
 \description{
 Welcome to the histopathR package.
