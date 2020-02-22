@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 # histopathR
 
 <!-- badges: start -->
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sbalci/histopathR)
 [![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/histopathR)](https://CRAN.R-project.org/package=histopathR)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/)
@@ -43,6 +44,7 @@ knitr::opts_chunk$set(
 ![GitHub](https://img.shields.io/github/license/sbalci/histopathR.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sbalci/histopathR/issues)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sbalci)
+[![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sbalci/histopathR/master?urlpath=rstudio)
 <!-- badges: end -->
 
 

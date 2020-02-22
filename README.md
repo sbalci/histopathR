@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Gitpod
+Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sbalci/histopathR)
 [![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/histopathR)](https://CRAN.R-project.org/package=histopathR)
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
@@ -48,6 +50,8 @@ stars](https://img.shields.io/github/stars/sbalci/histopathR.svg)](https://githu
 welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sbalci/histopathR/issues)
 [![Say
 Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/sbalci)
+[![Launch Rstudio
+Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sbalci/histopathR/master?urlpath=rstudio)
 <!-- badges: end -->
 
 <!-- The goal of histopathR is to ... -->
