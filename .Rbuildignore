@@ -34,3 +34,13 @@ exampleRmdFiles
 pdf
 renovate.json
 ^tic\.R$
+^.circleci$
+^bib$
+^css$
+^data$
+^fig$
+^img$
+^txt$
+.gitpod.Dockerfile
+.gitpod.yml
+.binder
